@@ -11,7 +11,7 @@
     id="sidebar-toggler"
     inHeader="true"
   ></c-toggler>
-  <c-header-brand [routerLink]="'/dashboard'" class="d-lg-none">
+  <c-header-brand [routerLink]="'/'" class="d-lg-none">
     <c-icon
       width="46"
       height="46"
@@ -22,7 +22,7 @@
   <!-- header links-->
   <ul class="c-header-nav d-md-down-none">
     <li class="c-header-nav-item px-3">
-      <a class="c-header-nav-link" [routerLink]="'/dashboard'">Dashboard</a>
+      <a class="c-header-nav-link" [routerLink]="'/'">Dashboard</a>
     </li>
     <li class="c-header-nav-item px-3">
       <a class="c-header-nav-link" href="#">Users</a>
@@ -44,6 +44,7 @@
       <c-icon name="cilApplicationsSettings" size="lg"></c-icon>
     </button>
   </c-toggler>
+
   <!--subheader-->
   <c-subheader class="justify-content-between px-3">
     <!--breadcrumbs-->
