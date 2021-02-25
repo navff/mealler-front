@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EnvironmentService } from '../../common-services/EnvironmentService';
 
 @Component({
   selector: 'app-ingredients',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IngredientsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private environmentService: EnvironmentService) {
+  }
 
   ngOnInit(): void {
+    this.environmentService.setTitle('titles.ingredients-page');
   }
 
 }

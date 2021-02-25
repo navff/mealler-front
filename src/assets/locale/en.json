@@ -1,7 +1,16 @@
 {
-	"common": {
-		"portions": "portions",
+  "common": {
+    "portions": "portions",
     "currency": "$",
-    "man-hour": "man-hours"
-	}
+    "man-hour": "man-hours",
+    "title": "Mealler | Catering help system"
+  },
+  "titles": {
+    "ingredients-page": "Ingredients",
+    "events-page": "Events",
+    "recipes-page": "Recipes",
+    "shopping-list-page": "Shopping list",
+    "my-account-page": "My account",
+    "my-team-page": "My team"
+  }
 }

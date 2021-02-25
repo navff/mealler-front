@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EventShort } from '../../models/event';
 import { EventsService } from './events.service';
+import { EnvironmentService } from '../../common-services/EnvironmentService';
 
 @Component({
   selector: 'app-events',
@@ -9,11 +10,14 @@ import { EventsService } from './events.service';
 })
 export class EventsComponent implements OnInit {
 
-  constructor(private eventsService: EventsService) { }
+  constructor(private eventsService: EventsService,
+              private environmentService: EnvironmentService) {
+  }
 
   events: EventShort[] = this.eventsService.getEvents();
 
   ngOnInit(): void {
+    this.environmentService.setTitle('titles.events-page');
   }
 
 }
