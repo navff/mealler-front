@@ -1,0 +1,8 @@
+<div class='meal-list-item'>
+  <a><b>{{meal.name}}</b></a>
+  <p>
+    {{meal.portions}} <ng-container>{{ 'common.portions' | translate }}</ng-container>
+    | {{meal.cost}}{{ 'common.currency' | translate }}
+    | {{meal.laborCosts}} {{'common.man-hour' | translate}}
+  </p>
+</div>

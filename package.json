@@ -27,7 +27,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e --port=4201",
     "zip": "git archive -o coreui-pro-angular-admin-template-starter-v$npm_package_version.zip -9 HEAD",
-    "link": "npm link @coreui/angular"
+    "link": "npm link @coreui/angular",
+    "extract": "ngx-translate-extract --input ./src -o ./src/assets/locale/en.json ./src/assets/locale/ru.json --sort --format namespaced-json"
   },
   "private": true,
   "dependencies": {
@@ -42,6 +43,7 @@
     "@angular/platform-browser": "^11.2.2",
     "@angular/platform-browser-dynamic": "^11.2.2",
     "@angular/router": "^11.2.2",
+    "@biesbjerg/ngx-translate-extract": "^7.0.3",
     "@coreui/angular": "^3.0.0-alpha.10",
     "@coreui/chartjs": "^2.0.0",
     "@coreui/coreui-pro": "^3.4.0",
@@ -54,6 +56,8 @@
     "@fullcalendar/list": "^5.4.0",
     "@fullcalendar/timegrid": "^5.4.0",
     "@ng-select/ng-select": "^6.1.0",
+    "@ngx-translate/core": "^13.0.0",
+    "@ngx-translate/http-loader": "^6.0.0",
     "@pascalhonegger/ng-datatable": "^11.1.0",
     "angular2-ladda": "^3.1.1",
     "angular2-text-mask": "^9.0.0",

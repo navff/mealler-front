@@ -57,6 +57,12 @@ import { ShoppingListComponent } from './pages/shopping-list/shopping-list.compo
 import { MyAccountComponent } from './pages/my-account/my-account.component';
 import { MyTeamComponent } from './pages/my-team/my-team.component';
 import { IngredientsComponent } from './pages/ingredients/ingredients.component';
+import { MissingTranslationHandler, TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { MissingTranslationService } from './common-services/MissingTranslationService';
+import { MealListItemComponent } from './pages/events/meal-list-item/meal-list-item.component';
+import { EventListItemComponent } from './pages/events/event-list-item/event-list-item.component';
 
 @NgModule({
     imports: [
@@ -86,6 +92,16 @@ import { IngredientsComponent } from './pages/ingredients/ingredients.component'
         PerfectScrollbarModule,
         BsDropdownModule.forRoot(),
         FormModule,
+        HttpClientModule,
+        TranslateModule.forRoot({
+          loader: {
+            provide: TranslateLoader,
+            useFactory: HttpLoaderFactory,
+            deps: [HttpClient],
+          },
+          missingTranslationHandler: { provide: MissingTranslationHandler, useClass: MissingTranslationService },
+          useDefaultLang: false,
+        })
     ],
   exports: [SharedModule],
 
@@ -97,15 +113,21 @@ import { IngredientsComponent } from './pages/ingredients/ingredients.component'
     ShoppingListComponent,
     MyAccountComponent,
     MyTeamComponent,
-    IngredientsComponent
+    IngredientsComponent,
+    MealListItemComponent,
+    EventListItemComponent,
   ],
   providers: [
     {
       provide: LocationStrategy,
       useClass: PathLocationStrategy,
     },
-    IconSetService,
+    IconSetService
   ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
+
+export function HttpLoaderFactory(http: HttpClient): TranslateLoader {
+  return new TranslateHttpLoader(http, './assets/locale/', '.json');
+}

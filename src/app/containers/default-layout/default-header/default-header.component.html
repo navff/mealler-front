@@ -16,20 +16,15 @@
       width="46"
       height="46"
       alt="CoreUI Logo"
-      [use]="'assets/img/brand/coreui-pro.svg#signet'"
+      [use]="'assets/img/brand/logo.svg'"
     ></c-icon>
   </c-header-brand>
   <!-- header links-->
   <ul class="c-header-nav d-md-down-none">
-    <li class="c-header-nav-item px-3">
-      <a class="c-header-nav-link" [routerLink]="'/'">Dashboard</a>
-    </li>
-    <li class="c-header-nav-item px-3">
-      <a class="c-header-nav-link" href="#">Users</a>
-    </li>
-    <li class="c-header-nav-item px-3">
-      <a class="c-header-nav-link" href="#">Settings</a>
-    </li>
+    <c-breadcrumb
+      class="border-0 m-0 px-0 px-md-3 c-subheader-nav"
+      cBreadcrumbRouter
+    ></c-breadcrumb>
   </ul>
   <!--theme toggler-->
   <c-toggler title="Toggle Light/Dark Mode" class="ml-auto" id="theme-toggler">
@@ -44,14 +39,4 @@
       <c-icon name="cilApplicationsSettings" size="lg"></c-icon>
     </button>
   </c-toggler>
-
-  <!--subheader-->
-  <c-subheader class="justify-content-between px-3">
-    <!--breadcrumbs-->
-    <c-breadcrumb
-      class="border-0 m-0 px-0 px-md-3 c-subheader-nav"
-      cBreadcrumbRouter
-    ></c-breadcrumb>
-  </c-subheader>
-  <!--</c-header>-->
 </ng-container>

@@ -1,1 +1,19 @@
-<p>events works!</p>
+<div class='fade-in'>
+  <c-row class="row">
+    <c-col sm="6" md="4" class="col-md-4 col-sm-6" *ngFor='let event of events'>
+      <app-event-list-item
+        [event]='event'>
+      </app-event-list-item>
+    </c-col>
+  </c-row>
+
+  <c-row class='row'>
+    <c-col col="md" sm="4" class="mb-3 text-center">
+      <button cButton color="danger" shape="pill">
+        <c-icon name="cil-library-add"></c-icon>
+        <span>&nbsp;Add event</span>
+      </button>
+    </c-col>
+
+  </c-row>
+</div>

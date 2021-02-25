@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 
-import { IconSetService } from '@coreui/icons-angular';
-// import { brandSet, flagSet, freeSet } from '@coreui/icons';
-import { cilMoon, cilSun, cilApplicationsSettings, cilX } from '@coreui/icons';
+import { IconModule, IconSetModule, IconSetService } from '@coreui/icons-angular';
+import { cilMoon, cilSun, cilApplicationsSettings, cilX, freeSet, brandSet, flagSet, cilLibraryAdd } from '@coreui/icons';
+import { TranslateService } from '@ngx-translate/core';
+import { environment } from '../environments/environment';
 
 @Component({
   // tslint:disable-next-line
@@ -12,10 +13,12 @@ import { cilMoon, cilSun, cilApplicationsSettings, cilX } from '@coreui/icons';
   providers: [IconSetService],
 })
 export class AppComponent implements OnInit {
-  constructor(private router: Router, public iconSet: IconSetService) {
+  constructor(private router: Router,
+              public iconSet: IconSetService,
+              private translateService: TranslateService) {
     // iconSet singleton
-    // iconSet.icons = { ...freeSet, ...brandSet, ...flagSet };
-    iconSet.icons = { cilMoon, cilSun, cilApplicationsSettings, cilX };
+    iconSet.icons = { cilMoon, cilSun, cilApplicationsSettings, cilX, freeSet, brandSet, flagSet, cilLibraryAdd };
+    this.translateService.use(environment.defaultLocale);
   }
 
   ngOnInit() {
