@@ -1,16 +1,16 @@
 {
   "common": {
-    "portions": "порций",
     "currency": "₽",
     "man-hour": "ч-час",
+    "portions": "порций",
     "title": "Mealler | Помощник для кейтеринга"
   },
   "titles": {
-    "ingredients-page": "Ингридиенты",
     "events-page": "События",
-    "recipes-page": "Рецепты",
-    "shopping-list-page": "Список покупок",
+    "ingredients-page": "Ингридиенты",
     "my-account-page": "Мой аккаунт",
-    "my-team-page": "Моя команда"
+    "my-team-page": "Моя команда",
+    "recipes-page": "Рецепты",
+    "shopping-list-page": "Список покупок"
   }
 }
