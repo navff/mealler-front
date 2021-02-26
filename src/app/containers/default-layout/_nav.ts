@@ -2,32 +2,32 @@ import { INavData } from '@coreui/angular';
 
 export const navItems: INavData[] = [
   {
-    name: 'Events',
+    name: 'events',
     url: '/events',
     icon: 'cil-cat'
   },
   {
-    name: 'Recipes',
+    name: 'recipes',
     url: '/recipes',
     icon: 'cil-restaurant'
   },
   {
-    name: 'Ingredients',
+    name: 'ingredients',
     url: '/ingredients',
     icon: 'cil-puzzle'
   },
   {
-    name: 'Shopping list',
+    name: 'shopping-list',
     url: '/shopping-list',
     icon: 'cil-cart'
   },
   {
-    name: 'My account',
+    name: 'my-account',
     url: '/my-account',
     icon: 'cil-user'
   },
   {
-    name: 'My team',
+    name: 'my-team',
     url: '/my-team',
     icon: 'cil-people'
   }

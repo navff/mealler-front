@@ -3,7 +3,15 @@
     "currency": "$",
     "man-hour": "man-hours",
     "portions": "portions",
-    "title": "Mealler | Catering help system"
+    "title": "Mealler | Catering help system",
+    "remove": "Remove"
+  },
+  "events": {
+    "actions": "Actions",
+    "actions-edit": "Edit",
+    "actions-print": "Print",
+    "actions-to-shopping-list": "Add to shopping list",
+    "add-event": "Add event"
   },
   "titles": {
     "events-page": "Events",
@@ -12,5 +20,13 @@
     "my-team-page": "My team",
     "recipes-page": "Recipes",
     "shopping-list-page": "Shopping list"
+  },
+  "navigation": {
+    "events": "Events",
+    "recipes": "Recipes",
+    "ingredients": "Ingridients",
+    "shopping-list": "Shopping list",
+    "my-account": "My account",
+    "my-team": "My team"
   }
 }

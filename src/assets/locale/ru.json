@@ -3,7 +3,15 @@
     "currency": "₽",
     "man-hour": "ч-час",
     "portions": "порций",
-    "title": "Mealler | Помощник для кейтеринга"
+    "title": "Mealler | Помощник для кейтеринга",
+    "remove": "Удалить"
+  },
+  "events": {
+    "actions": "Действия",
+    "actions-edit": "Редактировать",
+    "actions-print": "Печать",
+    "actions-to-shopping-list": "В список покупок",
+    "add-event": "Добавить событие"
   },
   "titles": {
     "events-page": "События",
@@ -12,5 +20,13 @@
     "my-team-page": "Моя команда",
     "recipes-page": "Рецепты",
     "shopping-list-page": "Список покупок"
+  },
+  "navigation": {
+    "events": "События",
+    "recipes": "Рецепты",
+    "ingredients": "Ингридиенты",
+    "shopping-list": "Список покупок",
+    "my-account": "Мой аккаунт",
+    "my-team": "Моя команда"
   }
 }
