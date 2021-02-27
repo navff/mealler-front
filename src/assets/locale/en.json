@@ -1,17 +1,34 @@
 {
   "common": {
+    "cancel": "Cancel",
     "currency": "$",
     "man-hour": "man-hours",
+    "name": "Name",
     "portions": "portions",
-    "title": "Mealler | Catering help system",
-    "remove": "Remove"
+    "remove": "Remove",
+    "save": "Save",
+    "title": "Mealler | Catering help system"
+  },
+  "recipe": {
+    "edit-selected-recipe": "Edit selected recipe"
   },
   "events": {
     "actions": "Actions",
     "actions-edit": "Edit",
     "actions-print": "Print",
     "actions-to-shopping-list": "Add to shopping list",
-    "add-event": "Add event"
+    "add-event": "Add event",
+    "edit": "Редактировать",
+    "date": "Date",
+    "name-placeholder": "Please input event name"
+  },
+  "navigation": {
+    "events": "Events",
+    "ingredients": "Ingridients",
+    "my-account": "My account",
+    "my-team": "My team",
+    "recipes": "Recipes",
+    "shopping-list": "Shopping list"
   },
   "titles": {
     "events-page": "Events",
@@ -20,13 +37,5 @@
     "my-team-page": "My team",
     "recipes-page": "Recipes",
     "shopping-list-page": "Shopping list"
-  },
-  "navigation": {
-    "events": "Events",
-    "recipes": "Recipes",
-    "ingredients": "Ingridients",
-    "shopping-list": "Shopping list",
-    "my-account": "My account",
-    "my-team": "My team"
   }
 }

@@ -1,34 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { LocationStrategy, HashLocationStrategy, PathLocationStrategy } from '@angular/common';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
-import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
-import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
-import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
-
-const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
-  suppressScrollX: true,
-};
-
+import { PerfectScrollbarConfigInterface, PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 
 // Import containers
 import { DefaultLayoutComponent } from './containers';
 import { DefaultHeaderComponent } from './containers/default-layout/default-header/default-header.component';
-
-const APP_CONTAINERS = [
-  DefaultLayoutComponent,
-  DefaultHeaderComponent,
-];
-
 import {
   AlertModule,
   BadgeModule,
-  ButtonModule,
   BreadcrumbModule,
-  CardModule,
+  ButtonModule,
   CalloutModule,
+  CardModule,
   ChartModule,
   CollapseModule,
   DropdownModule,
@@ -41,7 +29,7 @@ import {
   SidebarModule,
   SwitchModule,
   TabsetModule,
-  TogglerModule,
+  TogglerModule
 } from '@coreui/angular';
 
 import { IconModule, IconSetModule, IconSetService } from '@coreui/icons-angular';
@@ -63,46 +51,57 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { MissingTranslationService } from './common-services/MissingTranslationService';
 import { MealListItemComponent } from './pages/events/meal-list-item/meal-list-item.component';
 import { EventListItemComponent } from './pages/events/event-list-item/event-list-item.component';
+import { EventEditComponent } from './pages/events/event-edit/event-edit.component';
+
+const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
+  suppressScrollX: true
+};
+
+const APP_CONTAINERS = [
+  DefaultLayoutComponent,
+  DefaultHeaderComponent
+];
 
 @NgModule({
-    imports: [
-        AlertModule,
-        BadgeModule,
-        BrowserModule,
-        BrowserAnimationsModule,
-        AppRoutingModule,
-        ButtonModule,
-        BreadcrumbModule,
-        CardModule,
-        CalloutModule,
-        ChartModule,
-        CollapseModule,
-        DropdownModule,
-        GridModule,
-        IconModule,
-        IconSetModule.forRoot(),
-        SharedModule,
-        LayoutModule,
-        ListGroupModule,
-        ProgressModule,
-        SidebarModule,
-        SwitchModule,
-        TabsetModule,
-        TogglerModule,
-        PerfectScrollbarModule,
-        BsDropdownModule.forRoot(),
-        FormModule,
-        HttpClientModule,
-        TranslateModule.forRoot({
-          loader: {
-            provide: TranslateLoader,
-            useFactory: HttpLoaderFactory,
-            deps: [HttpClient],
-          },
-          missingTranslationHandler: { provide: MissingTranslationHandler, useClass: MissingTranslationService },
-          useDefaultLang: false,
-        })
-    ],
+  imports: [
+    AlertModule,
+    BadgeModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    ButtonModule,
+    BreadcrumbModule,
+    CardModule,
+    CalloutModule,
+    ChartModule,
+    CollapseModule,
+    DropdownModule,
+    GridModule,
+    IconModule,
+    IconSetModule.forRoot(),
+    SharedModule,
+    LayoutModule,
+    ListGroupModule,
+    ProgressModule,
+    SidebarModule,
+    SwitchModule,
+    TabsetModule,
+    TogglerModule,
+    PerfectScrollbarModule,
+    BsDropdownModule.forRoot(),
+    FormModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      },
+      missingTranslationHandler: { provide: MissingTranslationHandler, useClass: MissingTranslationService },
+      useDefaultLang: false
+    })
+  ],
   exports: [SharedModule],
 
   declarations: [
@@ -116,17 +115,19 @@ import { EventListItemComponent } from './pages/events/event-list-item/event-lis
     IngredientsComponent,
     MealListItemComponent,
     EventListItemComponent,
+    EventEditComponent
   ],
   providers: [
     {
       provide: LocationStrategy,
-      useClass: PathLocationStrategy,
+      useClass: HashLocationStrategy
     },
     IconSetService
   ],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule {
+}
 
 export function HttpLoaderFactory(http: HttpClient): TranslateLoader {
   return new TranslateHttpLoader(http, './assets/locale/', '.json');

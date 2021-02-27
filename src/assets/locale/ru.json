@@ -1,17 +1,34 @@
 {
   "common": {
+    "cancel": "Отменить",
     "currency": "₽",
     "man-hour": "ч-час",
+    "name": "Название",
     "portions": "порций",
-    "title": "Mealler | Помощник для кейтеринга",
-    "remove": "Удалить"
+    "remove": "Удалить",
+    "save": "Сохранить",
+    "title": "Mealler | Помощник для кейтеринга"
+  },
+  "recipes": {
+    "edit-selected-recipe": "Редактировать выбранный рецепт"
   },
   "events": {
     "actions": "Действия",
     "actions-edit": "Редактировать",
     "actions-print": "Печать",
     "actions-to-shopping-list": "В список покупок",
-    "add-event": "Добавить событие"
+    "add-event": "Добавить событие",
+    "edit": "Редактировать",
+    "date": "Дата",
+    "name-placeholder": "Введите название мероприятия"
+  },
+  "navigation": {
+    "events": "События",
+    "ingredients": "Ингридиенты",
+    "my-account": "Мой аккаунт",
+    "my-team": "Моя команда",
+    "recipes": "Рецепты",
+    "shopping-list": "Список покупок"
   },
   "titles": {
     "events-page": "События",
@@ -20,13 +37,5 @@
     "my-team-page": "Моя команда",
     "recipes-page": "Рецепты",
     "shopping-list-page": "Список покупок"
-  },
-  "navigation": {
-    "events": "События",
-    "recipes": "Рецепты",
-    "ingredients": "Ингридиенты",
-    "shopping-list": "Список покупок",
-    "my-account": "Мой аккаунт",
-    "my-team": "Моя команда"
   }
 }

@@ -1,4 +1,4 @@
-import { EventShort } from '../../models/event';
+import { EventFull, EventShort } from '../../models/event';
 import { Injectable } from '@angular/core';
 
 @Injectable({ providedIn: 'root' })
@@ -104,5 +104,14 @@ export class EventsService {
         ]
       }
     ];
+  }
+
+  public getById(id: number): EventFull {
+    const events = this.getEvents();
+    return events.find(value => value.id === id);
+  }
+
+  public save(event: EventFull) {
+    // TODO: save this event
   }
 }

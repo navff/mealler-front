@@ -1,28 +1,32 @@
+<c-card (click)='onItemClick($event, event.id)' class='card' style='cursor: pointer'>
+  <c-card-header class='card-header'>
+    <small>{{event.date | date : 'yyyy-MM-dd, hh:mm'}}</small><br>
+    <b>{{event.name}}</b>
+    <c-card-header-actions class='card-header-actions' style='height: 21px; float: initial; margin-left: -8px;'>
+      <c-button-group class='mr-1 mb-1' dropdown>
+        <button (click)='$event.stopPropagation();' [routerLink] cButton class='dropdown-toggle' color='link'
+                dropdownToggle
+                size='sm'>
+          {{ 'events.actions' | translate }}
+        </button>
+        <div *dropdownMenu class='dropdown-menu'>
+          <a [routerLink]="['/events/edit', event.id]" cDropdownItem>{{ 'events.edit' | translate }}</a>
+          <a [routerLink]="['/print-event', event.id]" cDropdownItem>{{ 'events.actions-print' | translate }}</a>
+          <a (click)='onAddToShoppingListClick(event.id)'
+             cDropdownItem>{{ 'events.actions-to-shopping-list' | translate }}</a>
+          <c-dropdown-divider></c-dropdown-divider>
+          <a (click)='onDeleteClicked(event.id)' cDropdownItem class='text-danger'>{{ 'common.remove' | translate }}</a>
+        </div>
+      </c-button-group>
+    </c-card-header-actions>
+  </c-card-header>
 
-  <c-card class="card" >
-    <c-card-header class="card-header"><b>{{event.name}} ({{event.date | date : 'yyyy-MM-dd, hh:mm'}})</b>
-      <c-card-header-actions style="height: 21px; float: initial; margin-left: -8px;" class="card-header-actions">
-        <c-button-group dropdown class="mr-1 mb-1">
-          <button cButton [routerLink] dropdownToggle color='link' size='sm' class='dropdown-toggle'>
-            {{ 'events.actions' | translate }}
-          </button>
-          <div *dropdownMenu class='dropdown-menu'>
-            <a [routerLink] cDropdownItem>{{ 'events.actions-edit' | translate }}</a>
-            <a [routerLink] cDropdownItem>{{ 'events.actions-print' | translate }}</a>
-            <a [routerLink] cDropdownItem>{{ 'events.actions-to-shopping-list' | translate }}</a>
-            <c-dropdown-divider></c-dropdown-divider>
-            <a [routerLink] cDropdownItem class='text-danger'>{{ 'common.remove' | translate }}</a>
-          </div>
-        </c-button-group>
-      </c-card-header-actions>
-    </c-card-header>
+  <c-card-body class='card-body'>
+    <app-meal-list-item
+      *ngFor='let meal of event.meals'
+      [meal]='meal'>
+    </app-meal-list-item>
+  </c-card-body>
 
-    <c-card-body class="card-body">
-      <app-meal-list-item
-        *ngFor='let meal of event.meals'
-        [meal]='meal'>
-      </app-meal-list-item>
-    </c-card-body>
-
-  </c-card>
+</c-card>
 

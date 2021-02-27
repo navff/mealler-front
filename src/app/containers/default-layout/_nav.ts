@@ -4,7 +4,7 @@ export const navItems: INavData[] = [
   {
     name: 'events',
     url: '/events',
-    icon: 'cil-cat'
+    icon: 'cil-calendar'
   },
   {
     name: 'recipes',

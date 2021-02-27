@@ -1,0 +1,48 @@
+<div class='fade-in'>
+  <c-row>
+    <c-col lg='8' sm='12' xl='6'>
+      <c-card>
+        <c-card-header>
+          <strong>{{event.name}} </strong>
+          <div class='float-right'>
+            <small> {{event.date | date:'yyyy-MM-dd, hh:mm'}}</small>
+          </div>
+
+        </c-card-header>
+        <c-card-body>
+          <form (ngSubmit)='onSaveEvent()' [formGroup]='eventForm'>
+            <c-form-group>
+              <label for='name'>{{ 'common.name' | translate}}</label>
+              <input cInput formControlName='name'
+                     id='name'
+                     placeholder="{{ 'events.name-placeholder' | translate}}">
+            </c-form-group>
+
+            <c-form-group>
+              <label for='date-input'>{{ 'events.date' | translate}}</label>
+              <input cInput formControlName='date'
+                     id='date-input'
+                     name='date-input'
+                     type='date'>
+            </c-form-group>
+
+            <c-form-group class='form-actions'>
+              <button [disabled]='eventForm.pristine'
+                      cButton
+                      class='mfe-1'
+                      color='success'
+                      type='submit'
+              >{{ 'common.save' | translate}}</button>
+
+              <button (click)='onCancel()'
+                      [disabled]='eventForm.pristine'
+                      cButton
+                      color='secondary'
+              >{{ 'common.cancel' | translate}}</button>
+            </c-form-group>
+          </form>
+        </c-card-body>
+      </c-card>
+    </c-col>
+  </c-row>
+</div>

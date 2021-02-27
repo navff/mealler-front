@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
 // Import Containers
 import { DefaultLayoutComponent } from './containers';
@@ -9,12 +9,13 @@ import { ShoppingListComponent } from './pages/shopping-list/shopping-list.compo
 import { MyAccountComponent } from './pages/my-account/my-account.component';
 import { MyTeamComponent } from './pages/my-team/my-team.component';
 import { IngredientsComponent } from './pages/ingredients/ingredients.component';
+import { EventEditComponent } from './pages/events/event-edit/event-edit.component';
 
 export const routes: Routes = [
   {
     path: '',
     redirectTo: 'events',
-    pathMatch: 'full',
+    pathMatch: 'full'
   },
   {
     path: '',
@@ -25,57 +26,72 @@ export const routes: Routes = [
     children: [
       {
         path: 'events',
-        component: EventsComponent,
         data: {
-          title: 'Events',
+          title: 'Events'
         },
+        children: [
+          {
+            path: '',
+            component: EventsComponent,
+            pathMatch: 'full'
+          },
+          {
+            path: 'edit/:id',
+            component: EventEditComponent,
+            data: {
+              title: 'Edit event'
+            }
+          }
+        ]
       },
       {
         path: 'recipes',
         component: RecipesComponent,
         data: {
-          title: 'Recipes',
-        },
+          title: 'Recipes'
+        }
       },
       {
         path: 'ingredients',
         component: IngredientsComponent,
         data: {
-          title: 'Ingredients',
-        },
+          title: 'Ingredients'
+        }
       },
       {
         path: 'shopping-list',
         component: ShoppingListComponent,
         data: {
-          title: 'Shopping list',
-        },
+          title: 'Shopping list'
+        }
       },
       {
         path: 'my-account',
         component: MyAccountComponent,
         data: {
-          title: 'My account',
-        },
+          title: 'My account'
+        }
       },
       {
         path: 'my-team',
         component: MyTeamComponent,
         data: {
-          title: 'My account',
-        },
-      },
+          title: 'My account'
+        }
+      }
     ]
   }
 ];
 
 @NgModule({
-  imports: [ RouterModule.forRoot(routes, {
+  imports: [RouterModule.forRoot(routes, {
     scrollPositionRestoration: 'top',
     anchorScrolling: 'enabled',
     relativeLinkResolution: 'corrected',
-    useHash: false
-}) ],
-  exports: [ RouterModule ]
+    useHash: true,
+    onSameUrlNavigation: 'reload'
+  })],
+  exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule {
+}
