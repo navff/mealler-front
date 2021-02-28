@@ -38,6 +38,7 @@ export class MealEditComponent implements OnInit {
 
   onSaveMeal() {
     this.mealService.save(this.mealForm.value);
+    this.location.back();
   }
 
   onCancel() {
