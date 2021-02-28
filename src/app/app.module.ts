@@ -52,6 +52,8 @@ import { MissingTranslationService } from './common-services/MissingTranslationS
 import { MealListItemComponent } from './pages/events/meal-list-item/meal-list-item.component';
 import { EventListItemComponent } from './pages/events/event-list-item/event-list-item.component';
 import { EventEditComponent } from './pages/events/event-edit/event-edit.component';
+import { MealEditComponent } from './pages/events/meal-edit/meal-edit.component';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -100,7 +102,8 @@ const APP_CONTAINERS = [
       },
       missingTranslationHandler: { provide: MissingTranslationHandler, useClass: MissingTranslationService },
       useDefaultLang: false
-    })
+    }),
+    NgSelectModule
   ],
   exports: [SharedModule],
 
@@ -115,7 +118,8 @@ const APP_CONTAINERS = [
     IngredientsComponent,
     MealListItemComponent,
     EventListItemComponent,
-    EventEditComponent
+    EventEditComponent,
+    MealEditComponent
   ],
   providers: [
     {

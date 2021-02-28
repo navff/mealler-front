@@ -10,6 +10,7 @@ import { MyAccountComponent } from './pages/my-account/my-account.component';
 import { MyTeamComponent } from './pages/my-team/my-team.component';
 import { IngredientsComponent } from './pages/ingredients/ingredients.component';
 import { EventEditComponent } from './pages/events/event-edit/event-edit.component';
+import { MealEditComponent } from './pages/events/meal-edit/meal-edit.component';
 
 export const routes: Routes = [
   {
@@ -40,6 +41,13 @@ export const routes: Routes = [
             component: EventEditComponent,
             data: {
               title: 'Edit event'
+            }
+          },
+          {
+            path: 'meal/:id',
+            component: MealEditComponent,
+            data: {
+              title: 'Edit meal'
             }
           }
         ]

@@ -1,0 +1,89 @@
+<div class='fade-in'>
+  <c-row>
+    <c-col lg='8' sm='12' xl='6'>
+      <c-card>
+        <c-card-header>
+          <c-icon name='cil-pencil' size='sm'></c-icon>&nbsp;
+          <strong>{{'meals.meal' | translate}}: {{meal.recipeName}} </strong>
+
+        </c-card-header>
+        <c-card-body>
+          <form (ngSubmit)='onSaveMeal()' [formGroup]='mealForm'>
+
+            <c-form-group>
+              <label for='recipe'>{{ 'recipes.recipe' | translate}}</label>
+              <ng-select
+                [clearable]='true'
+                [items]='recipesDropdownItems'
+                class='bootstrap'
+                formControlName='recipe'
+                id='recipe'
+                placeholder='Choose your favorite country'
+              >
+              </ng-select>
+              <a href='#'>{{'meals.edit-selected-recipe' | translate}}</a>
+            </c-form-group>
+
+            <c-form-group class='col-5' style='padding-left: 0'>
+              <label for='portions'>{{ 'meals.portions-count' | translate}}</label>
+              <input cInput formControlName='portions'
+                     id='portions'
+                     type='number'>
+            </c-form-group>
+
+            <c-form-group class='col-5' style='padding-left: 0'>
+              <label for='cookingTime'>{{ 'meals.cooking-time' | translate}}</label>
+              <input cInput formControlName='cookingTime'
+                     id='cookingTime'
+                     type='number'>
+            </c-form-group>
+
+            <div style='margin-bottom: 20px;'>
+              <p>{{'meals.labor-costs' | translate }}: {{ meal.laborCosts }} {{ 'common.units.hours' | translate }}</p>
+            </div>
+
+            <c-col lg='12' style='padding-left: 0'>
+              <table class='table table-responsive-sm table-sm'>
+                <colgroup>
+                  <col class='column-1' />
+                  <col class='column-2' />
+                  <col class='column-3' />
+                </colgroup>
+                <thead>
+                <tr>
+                  <th>{{ 'ingredients.ingredient' | translate }}</th>
+                  <th>{{ 'ingredients.count' | translate }}</th>
+                  <th>{{ 'ingredients.cost' | translate }}</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor='let mealIngredient of meal.ingredients'>
+                  <td>{{ mealIngredient.ingredientName}}</td>
+                  <td>{{ mealIngredient.count }}</td>
+                  <td>{{ mealIngredient.cost }}</td>
+                </tr>
+                </tbody>
+              </table>
+              <p class='text-danger'>TODO: Обновлять талблицу живьём, когда меняются данные в инпутах</p>
+              <br />
+            </c-col>
+
+            <c-form-group class='form-actions'>
+              <button [disabled]='mealForm.pristine'
+                      cButton
+                      class='mfe-1'
+                      color='success'
+                      type='submit'
+              >{{ 'common.save' | translate}}</button>
+
+              <button (click)='onCancel()'
+                      cButton
+                      color='secondary'
+              >{{ 'common.cancel' | translate}}</button>
+            </c-form-group>
+          </form>
+        </c-card-body>
+      </c-card>
+    </c-col>
+  </c-row>
+</div>

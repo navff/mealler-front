@@ -38,6 +38,7 @@ export class EventEditComponent implements OnInit {
 
   onCancel() {
     this.eventForm.reset(this.optimize(this.event));
+    this.router.navigate(['events']);
   }
 
   optimize(event: EventFull): any {

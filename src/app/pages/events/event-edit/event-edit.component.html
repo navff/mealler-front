@@ -3,6 +3,7 @@
     <c-col lg='8' sm='12' xl='6'>
       <c-card>
         <c-card-header>
+          <c-icon name='cil-pencil' size='sm'></c-icon>&nbsp;
           <strong>{{event.name}} </strong>
           <div class='float-right'>
             <small> {{event.date | date:'yyyy-MM-dd, hh:mm'}}</small>
@@ -35,7 +36,6 @@
               >{{ 'common.save' | translate}}</button>
 
               <button (click)='onCancel()'
-                      [disabled]='eventForm.pristine'
                       cButton
                       color='secondary'
               >{{ 'common.cancel' | translate}}</button>

@@ -1,10 +1,10 @@
-<c-card (click)='onItemClick($event, event.id)' class='card' style='cursor: pointer'>
+<c-card class='card'>
   <c-card-header class='card-header'>
     <small>{{event.date | date : 'yyyy-MM-dd, hh:mm'}}</small><br>
     <b>{{event.name}}</b>
     <c-card-header-actions class='card-header-actions' style='height: 21px; float: initial; margin-left: -8px;'>
       <c-button-group class='mr-1 mb-1' dropdown>
-        <button (click)='$event.stopPropagation();' [routerLink] cButton class='dropdown-toggle' color='link'
+        <button [routerLink] cButton class='dropdown-toggle' color='link'
                 dropdownToggle
                 size='sm'>
           {{ 'events.actions' | translate }}

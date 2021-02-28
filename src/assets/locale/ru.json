@@ -7,10 +7,10 @@
     "portions": "порций",
     "remove": "Удалить",
     "save": "Сохранить",
-    "title": "Mealler | Помощник для кейтеринга"
-  },
-  "recipes": {
-    "edit-selected-recipe": "Редактировать выбранный рецепт"
+    "title": "Mealler | Помощник для кейтеринга",
+    "units": {
+      "hours": "час."
+    }
   },
   "events": {
     "actions": "Действия",
@@ -18,9 +18,22 @@
     "actions-print": "Печать",
     "actions-to-shopping-list": "В список покупок",
     "add-event": "Добавить событие",
-    "edit": "Редактировать",
     "date": "Дата",
+    "edit": "Редактировать",
     "name-placeholder": "Введите название мероприятия"
+  },
+  "ingredients": {
+    "cost": "Стоимость",
+    "count": "Количество",
+    "ingredient": "Ингридиент"
+  },
+  "meals": {
+    "cooking-time": "Время приготовления",
+    "edit-selected-recipe": "Редактировать выбранный рецепт",
+    "labor-costs": "Трудозатраты",
+    "meal": "Блюдо",
+    "portions-count": "Количество порций",
+    "recipe-placeholder": "Выберите рецепт"
   },
   "navigation": {
     "events": "События",
@@ -29,6 +42,9 @@
     "my-team": "Моя команда",
     "recipes": "Рецепты",
     "shopping-list": "Список покупок"
+  },
+  "recipes": {
+    "recipe": "Рецепт"
   },
   "titles": {
     "events-page": "События",

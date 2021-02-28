@@ -1,109 +1,43 @@
 import { EventFull, EventShort } from '../../models/event';
 import { Injectable } from '@angular/core';
+import { MealService } from './meal.service';
 
 @Injectable({ providedIn: 'root' })
 export class EventsService {
+
+
+  constructor(private mealService: MealService) {
+  }
+
   public getEvents(): EventShort[] {
+    const meals = this.mealService.getMealsByEventId(1);
     return [
       {
         id: 1,
         name: 'Завтрак',
         date: new Date(2021, 1, 12),
-        meals: [
-          {
-            id: 1,
-            name: 'Джаганнатха пури чанаки дал',
-            portions: 120,
-            laborCosts: 4.5,
-            cost: 1350
-          },
-          {
-            id: 2,
-            name: 'Суп из водоросля',
-            portions: 98,
-            laborCosts: 2.6,
-            cost: 458
-          },
-          {
-            id: 3,
-            name: 'Алу патры',
-            portions: 225,
-            laborCosts: 5.0,
-            cost: 1300
-          }
-        ]
+        meals: meals
       },
       {
         id: 2,
         name: 'Обед',
         date: new Date(2021, 1, 12),
-        meals: [
-          {
-            id: 1,
-            name: 'Пирожок с капустой',
-            portions: 120,
-            laborCosts: 4.5,
-            cost: 1350
-          },
-          {
-            id: 2,
-            name: 'Халава вкусная, сладкая',
-            portions: 98,
-            laborCosts: 2.6,
-            cost: 458
-          },
-          {
-            id: 3,
-            name: 'Напиток чечевичный',
-            portions: 50,
-            laborCosts: 5.0,
-            cost: 1300
-          }
-        ]
+        meals: meals
       },
       {
         id: 3,
         name: 'Ужин',
         date: new Date(2021, 1, 12),
-        meals: [
-          {
-            id: 1,
-            name: 'Халава',
-            portions: 120,
-            laborCosts: 4.5,
-            cost: 1350
-          },
-          {
-            id: 2,
-            name: 'Цикорий',
-            portions: 98,
-            laborCosts: 2.6,
-            cost: 458
-          }
-        ]
+        meals: meals
       },
       {
         id: 4,
         name: 'Ночной перекус',
         date: new Date(2021, 1, 12),
-        meals: [
-          {
-            id: 1,
-            name: 'Пирожок с капустой',
-            portions: 120,
-            laborCosts: 4.5,
-            cost: 1350
-          },
-          {
-            id: 3,
-            name: 'Напиток чечевичный',
-            portions: 50,
-            laborCosts: 5.0,
-            cost: 1300
-          }
-        ]
+        meals: meals
       }
-    ];
+    ]
+      ;
   }
 
   public getById(id: number): EventFull {

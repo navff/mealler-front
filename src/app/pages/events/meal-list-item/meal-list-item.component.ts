@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { MealShort } from '../../../models/meal';
+import { Meal } from '../../../models/meal';
 
 @Component({
   selector: 'app-meal-list-item',
@@ -10,7 +10,7 @@ export class MealListItemComponent implements OnInit {
 
   constructor() { }
 
-  @Input() meal: MealShort;
+  @Input() meal: Meal;
 
 
   ngOnInit(): void {
