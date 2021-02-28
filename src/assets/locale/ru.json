@@ -25,7 +25,8 @@
   "ingredients": {
     "cost": "Стоимость",
     "count": "Количество",
-    "ingredient": "Ингридиент"
+    "ingredient": "Ингридиент",
+    "ingredients": "Ингридиенты"
   },
   "meals": {
     "cooking-time": "Время приготовления",
@@ -44,6 +45,9 @@
     "shopping-list": "Список покупок"
   },
   "recipes": {
+    "calculation-for": "Расчёт для",
+    "laborCosts": "Трудозатраты",
+    "portions-count": "Количество порций",
     "recipe": "Рецепт"
   },
   "titles": {

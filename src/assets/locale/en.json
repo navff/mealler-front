@@ -25,7 +25,8 @@
   "ingredients": {
     "cost": "Cost",
     "count": "Count",
-    "ingredient": "Ingredient"
+    "ingredient": "Ingredient",
+    "ingredients": "Ingredients"
   },
   "meals": {
     "cooking-time": "Cooking time",
@@ -43,10 +44,11 @@
     "recipes": "Recipes",
     "shopping-list": "Shopping list"
   },
-  "recipe": {
-    "edit-selected-recipe": "Edit selected recipe"
-  },
+  "recipe": {},
   "recipes": {
+    "calculation-for": "Calculation for",
+    "laborCosts": "Labor costs",
+    "portions-count": "Portions count",
     "recipe": "Recipe"
   },
   "titles": {

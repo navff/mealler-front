@@ -21,7 +21,7 @@
                 placeholder='Choose your favorite country'
               >
               </ng-select>
-              <a href='#'>{{'meals.edit-selected-recipe' | translate}}</a>
+              <a [routerLink]='["/recipes/edit", meal.recipeId]'>{{'meals.edit-selected-recipe' | translate}}</a>
             </c-form-group>
 
             <c-form-group class='col-5' style='padding-left: 0'>
@@ -44,11 +44,6 @@
 
             <c-col lg='12' style='padding-left: 0'>
               <table class='table table-responsive-sm table-sm'>
-                <colgroup>
-                  <col class='column-1' />
-                  <col class='column-2' />
-                  <col class='column-3' />
-                </colgroup>
                 <thead>
                 <tr>
                   <th>{{ 'ingredients.ingredient' | translate }}</th>

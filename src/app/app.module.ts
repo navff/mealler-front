@@ -54,6 +54,8 @@ import { EventListItemComponent } from './pages/events/event-list-item/event-lis
 import { EventEditComponent } from './pages/events/event-edit/event-edit.component';
 import { MealEditComponent } from './pages/events/meal-edit/meal-edit.component';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { RecipeEditComponent } from './pages/recipes/recipe-edit/recipe-edit.component';
+import { RecipesListComponent } from './pages/recipes/recipes-list/recipes-list.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -119,7 +121,9 @@ const APP_CONTAINERS = [
     MealListItemComponent,
     EventListItemComponent,
     EventEditComponent,
-    MealEditComponent
+    MealEditComponent,
+    RecipeEditComponent,
+    RecipesListComponent
   ],
   providers: [
     {

@@ -9,6 +9,7 @@ import {
   cilMoon,
   cilPencil,
   cilSun,
+  cilTrash,
   cilX,
   flagSet,
   freeSet
@@ -29,7 +30,8 @@ export class AppComponent implements OnInit {
     // iconSet singleton
     iconSet.icons = {
       cilMoon, cilSun, cilApplicationsSettings, cilX,
-      freeSet, brandSet, flagSet, cilLibraryAdd, cilPencil
+      freeSet, brandSet, flagSet, cilLibraryAdd, cilPencil,
+      cilTrash
     };
     this.translateService.use(environment.defaultLocale);
   }
