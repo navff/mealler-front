@@ -13,7 +13,8 @@
             <c-form-group>
               <label for='name'>{{ 'common.name' | translate}}</label>
               <input cInput formControlName='name'
-                     id='name'>
+                     id='name'
+                     style='width: 100%'>
             </c-form-group>
 
             <h5>{{ 'recipes.calculation-for' | translate}}:</h5>
@@ -22,34 +23,67 @@
               <input cInput formControlName='portions'
                      id='portions'
                      type='number'>
+              <small>{{ 'recipes.portions-count-hint' | translate}}</small>
             </c-form-group>
 
             <c-form-group class='col-5' style='padding-left: 0'>
-              <label for='cookingTime'>{{ 'recipes.laborCosts' | translate}}</label>
+              <label for='laborCosts'>{{ 'recipes.labor-costs' | translate}}</label>
+              <input cInput formControlName='laborCosts'
+                     id='laborCosts'
+                     type='number'>
+            </c-form-group>
+
+            <c-form-group class='col-5' style='padding-left: 0'>
+              <label for='cookingTime'>{{ 'recipes.cooking-time' | translate}}</label>
               <input cInput formControlName='cookingTime'
                      id='cookingTime'
                      type='number'>
             </c-form-group>
 
+            <!-- Ingredients -->
             <h5>{{ 'ingredients.ingredients' | translate}}:</h5>
-            <div class='form-inline' style='margin-bottom: 20px'>
-              <c-form-group class='col-5'>
-                <label class='sr-only' for='ingredient-name'>Email</label>
-                <input cInput id='ingredient-name' name='ingredient-name' placeholder='ingredient name'>
-              </c-form-group>
-              <c-form-group class='col-5'>
-                <label class='sr-only' for='if-password'>Password</label>
-                <input autocomplete='current-password' cInput id='if-password' name='if-password'
-                       placeholder='Enter Password..'
-                       type='password'>
-              </c-form-group>
-              <button cButton class='mr-1 mb-1'
-                      color='pinterest' size='sm'
-                      style='margin: 5px 0 0 5px'>
-                <c-icon name='cil-trash' size='sm'></c-icon>
-              </button>
-            </div>
+            <div *ngFor='let ingredientCtrl of this.ingredientsFromArrayControls; let i = index'
+                 class='form-inline'
+                 formArrayName='ingredients'
+                 style='margin-bottom: 20px; padding-left: 0'>
+              <ng-container [formGroupName]='i'>
+                <c-form-group class='col-7' style='padding-left: 0'>
+                  <label class='sr-only' for='ingredientId'>Amount</label>
+                  <ng-select
+                    [clearable]='true'
+                    [items]='ingredientsDropdownItems'
+                    class='bootstrap'
+                    formControlName='ingredient'
+                    id='ingredientId'
+                    placeholder='Please select recipe'>
+                  </ng-select>
+                </c-form-group>
 
+                <c-form-group class='col-3'>
+                  <label class='sr-only' for='ingredientAmount'>{{ 'ingredients.count' | translate }}</label>
+                  <input [isDisabled]='ingredientCtrl.ingredient.amount<=0' cInput
+                         formControlName='ingredientAmount'
+                         id='ingredientAmount'
+                         placeholder="{{ 'common.units.'+ingredientCtrl.ingredient.unit | translate }}"
+                         tooltip="{{ 'ingredients.count' | translate }} ({{ 'common.units.'+ingredientCtrl.ingredient.unit | translate }})"
+                  >
+                </c-form-group>
+
+                <c-form-group class='col-2'>
+                  <button (click)='onRemoveIngredient(ingredientCtrl, i)' cButton
+                          class='mr-1 mb-1' color='pinterest'
+                          size='sm'
+                          style='margin: 5px 0 0 5px'>
+                    <c-icon name='cil-trash' size='sm'></c-icon>
+                  </button>
+                </c-form-group>
+              </ng-container>
+            </div> <!-- End Ingredients -->
+
+            <button class='btn-sm btn btn-ghost-info'>Add ingredient</button>
+
+            <hr />
+            <!-- Form actions -->
             <c-form-group class='form-actions'>
               <button [disabled]='recipeForm.pristine'
                       cButton

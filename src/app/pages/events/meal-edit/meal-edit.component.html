@@ -18,7 +18,7 @@
                 class='bootstrap'
                 formControlName='recipe'
                 id='recipe'
-                placeholder='Choose your favorite country'
+                placeholder='Please select recipe'
               >
               </ng-select>
               <a [routerLink]='["/recipes/edit", meal.recipeId]'>{{'meals.edit-selected-recipe' | translate}}</a>
@@ -54,7 +54,7 @@
                 <tbody>
                 <tr *ngFor='let mealIngredient of meal.ingredients'>
                   <td>{{ mealIngredient.ingredientName}}</td>
-                  <td>{{ mealIngredient.count }}</td>
+                  <td>{{ mealIngredient.amount }}</td>
                   <td>{{ mealIngredient.cost }}</td>
                 </tr>
                 </tbody>

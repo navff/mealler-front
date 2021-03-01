@@ -6,6 +6,7 @@ export class Recipe implements IRecipe {
   ingredients: RecipeIngredient[];
   portions: number;
   laborCosts: number;
+  cookingTime: number;
 }
 
 export interface IRecipe {

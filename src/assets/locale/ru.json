@@ -9,7 +9,10 @@
     "save": "Сохранить",
     "title": "Mealler | Помощник для кейтеринга",
     "units": {
-      "hours": "час."
+      "hours": "час",
+      "kg": "кг",
+      "items": "шт",
+      "gr": "гр"
     }
   },
   "events": {
@@ -26,12 +29,13 @@
     "cost": "Стоимость",
     "count": "Количество",
     "ingredient": "Ингридиент",
-    "ingredients": "Ингридиенты"
+    "ingredients": "Ингридиенты",
+    "name": "Название"
   },
   "meals": {
     "cooking-time": "Время приготовления",
     "edit-selected-recipe": "Редактировать выбранный рецепт",
-    "labor-costs": "Трудозатраты",
+    "labor-costs": "Трудозатраты (час.)",
     "meal": "Блюдо",
     "portions-count": "Количество порций",
     "recipe-placeholder": "Выберите рецепт"
@@ -46,9 +50,11 @@
   },
   "recipes": {
     "calculation-for": "Расчёт для",
-    "laborCosts": "Трудозатраты",
+    "labor-costs": "Трудозатраты (час.)",
     "portions-count": "Количество порций",
-    "recipe": "Рецепт"
+    "portions-count-hint": "На какое количество порций рассчитан рецепт",
+    "recipe": "Рецепт",
+    "cooking-time": "Время приготовления"
   },
   "titles": {
     "events-page": "События",

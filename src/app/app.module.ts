@@ -56,6 +56,7 @@ import { MealEditComponent } from './pages/events/meal-edit/meal-edit.component'
 import { NgSelectModule } from '@ng-select/ng-select';
 import { RecipeEditComponent } from './pages/recipes/recipe-edit/recipe-edit.component';
 import { RecipesListComponent } from './pages/recipes/recipes-list/recipes-list.component';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -105,7 +106,8 @@ const APP_CONTAINERS = [
       missingTranslationHandler: { provide: MissingTranslationHandler, useClass: MissingTranslationService },
       useDefaultLang: false
     }),
-    NgSelectModule
+    NgSelectModule,
+    TooltipModule
   ],
   exports: [SharedModule],
 

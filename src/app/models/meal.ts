@@ -1,4 +1,4 @@
-import { MealIngredient } from './ingredient';
+import { RecipeIngredient } from './ingredient';
 
 export class Meal {
   id: number;
@@ -8,5 +8,5 @@ export class Meal {
   cost: number;
   recipeId: number;
   recipeName: string;
-  ingredients: MealIngredient[];
+  ingredients: RecipeIngredient[];
 }

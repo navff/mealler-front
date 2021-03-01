@@ -1,33 +1,64 @@
 import { Injectable } from '@angular/core';
-import { RecipeIngredient } from '../../models/ingredient';
+import { Ingredient, RecipeIngredient } from '../../models/ingredient';
 
 @Injectable({ providedIn: 'root' })
 export class IngredientsService {
   getByRecipe(recipeId: number): RecipeIngredient[] {
     return [
       {
-        count: 1,
+        amount: 1,
         ingredientId: 1,
         ingredientName: 'Морковка',
-        recipeId: recipeId
+        recipeId: recipeId,
+        unit: 'items'
       },
       {
-        count: 20,
+        amount: 20,
         ingredientId: 2,
         ingredientName: 'Картофель',
-        recipeId: recipeId
+        recipeId: recipeId,
+        unit: 'kg'
       },
       {
-        count: 5.5,
+        amount: 5.5,
         ingredientId: 3,
         ingredientName: 'Сгущёнка',
-        recipeId: recipeId
+        recipeId: recipeId,
+        unit: 'gr'
       },
       {
-        count: 8,
+        amount: 8,
         ingredientId: 4,
         ingredientName: 'Ананас вяленый с собственном соку',
-        recipeId: recipeId
+        recipeId: recipeId,
+        unit: 'items'
+      }
+    ];
+  }
+
+  getByMeal(mealId: number): RecipeIngredient[] {
+    return this.getByRecipe(mealId); // DO something more logical
+  }
+
+  getIngredients(): Ingredient[] {
+    return [
+      {
+        id: 1,
+        name: 'Морковка',
+        unit: 'kg',
+        description: ''
+      },
+      {
+        id: 2,
+        name: 'Картофель',
+        unit: 'kg',
+        description: ''
+      },
+      {
+        id: 3,
+        name: 'Творог',
+        unit: 'gr',
+        description: ''
       }
     ];
   }

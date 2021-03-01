@@ -1,8 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Meal } from '../../models/meal';
+import { IngredientsService } from '../ingredients/ingredients.service';
 
 @Injectable({ providedIn: 'root' })
 export class MealService {
+
+
+  constructor(private ingredientsService: IngredientsService) {
+  }
 
   getById(id: number) {
     const meals = this.getMealsByEventId(1);
@@ -10,6 +15,7 @@ export class MealService {
   }
 
   getMealsByEventId(eventId: number): Meal[] {
+    const ingredients = this.ingredientsService.getByMeal(1);
     return [
       {
         id: 1,
@@ -19,28 +25,7 @@ export class MealService {
         laborCosts: 1.5,
         cookingTime: 4.5,
         cost: 1350,
-        ingredients: [
-          {
-            mealId: 1,
-            ingredientId: 1,
-            ingredientName: 'Морковка',
-            cost: 120,
-            count: 3
-          },
-          {
-            mealId: 1,
-            ingredientId: 2,
-            ingredientName: 'Картофель',
-            cost: 90,
-            count: 3
-          },
-          {
-            mealId: 1,
-            ingredientId: 3,
-            ingredientName: 'Кора ананаса, очищенная так, чтобы не было очисток',
-            cost: 525,
-            count: 3
-          }]
+        ingredients: ingredients
       },
       {
         id: 2,
@@ -50,28 +35,7 @@ export class MealService {
         laborCosts: 1.6,
         cookingTime: 2.6,
         cost: 458,
-        ingredients: [
-          {
-            mealId: 1,
-            ingredientId: 1,
-            ingredientName: 'Морковка',
-            cost: 120,
-            count: 3
-          },
-          {
-            mealId: 1,
-            ingredientId: 2,
-            ingredientName: 'Картофель',
-            cost: 90,
-            count: 3
-          },
-          {
-            mealId: 1,
-            ingredientId: 3,
-            ingredientName: 'Кора ананаса',
-            cost: 525,
-            count: 3
-          }]
+        ingredients: ingredients
       },
       {
         id: 3,
@@ -81,28 +45,7 @@ export class MealService {
         laborCosts: 1.2,
         cookingTime: 3.2,
         cost: 1300,
-        ingredients: [
-          {
-            mealId: 1,
-            ingredientId: 1,
-            ingredientName: 'Морковка',
-            cost: 120,
-            count: 3
-          },
-          {
-            mealId: 1,
-            ingredientId: 2,
-            ingredientName: 'Картофель',
-            cost: 90,
-            count: 3
-          },
-          {
-            mealId: 1,
-            ingredientId: 3,
-            ingredientName: 'Кора ананаса',
-            cost: 525,
-            count: 3
-          }]
+        ingredients: ingredients
       },
       {
         id: 4,
@@ -112,28 +55,7 @@ export class MealService {
         laborCosts: 3.0,
         cookingTime: 4.0,
         cost: 1350,
-        ingredients: [
-          {
-            mealId: 1,
-            ingredientId: 1,
-            ingredientName: 'Морковка',
-            cost: 120,
-            count: 3
-          },
-          {
-            mealId: 1,
-            ingredientId: 2,
-            ingredientName: 'Картофель',
-            cost: 90,
-            count: 3
-          },
-          {
-            mealId: 1,
-            ingredientId: 3,
-            ingredientName: 'Кора ананаса',
-            cost: 525,
-            count: 3
-          }]
+        ingredients: ingredients
       },
       {
         id: 5,
@@ -143,28 +65,7 @@ export class MealService {
         laborCosts: 1.5,
         cookingTime: 1.5,
         cost: 458,
-        ingredients: [
-          {
-            mealId: 1,
-            ingredientId: 1,
-            ingredientName: 'Морковка',
-            cost: 120,
-            count: 3
-          },
-          {
-            mealId: 1,
-            ingredientId: 2,
-            ingredientName: 'Картофель',
-            cost: 90,
-            count: 3
-          },
-          {
-            mealId: 1,
-            ingredientId: 3,
-            ingredientName: 'Кора ананаса',
-            cost: 525,
-            count: 3
-          }]
+        ingredients: ingredients
       },
       {
         id: 6,
@@ -174,28 +75,7 @@ export class MealService {
         laborCosts: 0.5,
         cookingTime: 1.5,
         cost: 1300,
-        ingredients: [
-          {
-            mealId: 1,
-            ingredientId: 1,
-            ingredientName: 'Морковка',
-            cost: 120,
-            count: 3
-          },
-          {
-            mealId: 1,
-            ingredientId: 2,
-            ingredientName: 'Картофель',
-            cost: 90,
-            count: 3
-          },
-          {
-            mealId: 1,
-            ingredientId: 3,
-            ingredientName: 'Кора ананаса',
-            cost: 525,
-            count: 3
-          }]
+        ingredients: ingredients
       },
       {
         id: 7,
@@ -205,28 +85,7 @@ export class MealService {
         laborCosts: 4.5,
         cookingTime: 4.5,
         cost: 1350,
-        ingredients: [
-          {
-            mealId: 1,
-            ingredientId: 1,
-            ingredientName: 'Морковка',
-            cost: 120,
-            count: 3
-          },
-          {
-            mealId: 1,
-            ingredientId: 2,
-            ingredientName: 'Картофель',
-            cost: 90,
-            count: 3
-          },
-          {
-            mealId: 1,
-            ingredientId: 3,
-            ingredientName: 'Кора ананаса',
-            cost: 525,
-            count: 3
-          }]
+        ingredients: ingredients
       },
       {
         id: 8,
@@ -236,28 +95,7 @@ export class MealService {
         laborCosts: 0.6,
         cookingTime: 2.6,
         cost: 458,
-        ingredients: [
-          {
-            mealId: 1,
-            ingredientId: 1,
-            ingredientName: 'Морковка',
-            cost: 120,
-            count: 3
-          },
-          {
-            mealId: 1,
-            ingredientId: 2,
-            ingredientName: 'Картофель',
-            cost: 90,
-            count: 3
-          },
-          {
-            mealId: 1,
-            ingredientId: 3,
-            ingredientName: 'Кора ананаса',
-            cost: 525,
-            count: 3
-          }]
+        ingredients: ingredients
       }
     ];
   }
