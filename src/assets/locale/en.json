@@ -54,7 +54,8 @@
     "labor-costs": "Labor costs",
     "portions-count": "Servings count",
     "portions-count-hint": "How many servings is the recipe designed for?",
-    "recipe": "Recipe"
+    "recipe": "Recipe",
+    "select-ingredient-placeholder": "Select ingredient"
   },
   "titles": {
     "events-page": "Events",

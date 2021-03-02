@@ -26,11 +26,11 @@
     "name-placeholder": "Введите название мероприятия"
   },
   "ingredients": {
-    "add-ingredient": "Добавить ингридиент",
+    "add-ingredient": "Добавить ингредиент",
     "cost": "Стоимость",
     "count": "Количество",
-    "ingredient": "Ингридиент",
-    "ingredients": "Ингридиенты",
+    "ingredient": "Ингредиент",
+    "ingredients": "Ингредиенты",
     "name": "Название"
   },
   "meals": {
@@ -43,7 +43,7 @@
   },
   "navigation": {
     "events": "События",
-    "ingredients": "Ингридиенты",
+    "ingredients": "Ингредиенты",
     "my-account": "Мой аккаунт",
     "my-team": "Моя команда",
     "recipes": "Рецепты",
@@ -57,11 +57,12 @@
     "labor-costs": "Трудозатраты (час.)",
     "portions-count": "Количество порций",
     "portions-count-hint": "На какое количество порций рассчитан рецепт",
-    "recipe": "Рецепт"
+    "recipe": "Рецепт",
+    "select-ingredient-placeholder": "Выберите ингредиент"
   },
   "titles": {
     "events-page": "События",
-    "ingredients-page": "Ингридиенты",
+    "ingredients-page": "Ингредиенты",
     "my-account-page": "Мой аккаунт",
     "my-team-page": "Моя команда",
     "recipes-page": "Рецепты",
