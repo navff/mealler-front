@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Meal } from '../../../models/meal';
 import { MealService } from '../meal.service';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Location } from '@angular/common';
 import { RecipesService } from '../../recipes/recipes.service';
 import { IRecipe, Recipe } from '../../../models/recipe';
@@ -28,9 +28,15 @@ export class MealEditComponent implements OnInit {
     const id = +this.route.snapshot.paramMap.get('id');
     this.meal = this.mealService.getById(id);
     this.mealForm = new FormGroup({
-      'recipe': new FormControl(this.convertRecipeToDropdown(this.recipesService.getById(this.meal.recipeId))),
-      'portions': new FormControl(this.meal.portions),
-      'cookingTime': new FormControl(this.meal.cookingTime),
+      'recipe': new FormControl(
+        this.convertRecipeToDropdown(this.recipesService.getById(this.meal.recipeId)),
+        [Validators.required]),
+      'portions': new FormControl(
+        this.meal.portions,
+        [Validators.required, Validators.min(1)]),
+      'cookingTime': new FormControl(
+        this.meal.cookingTime,
+        [Validators.required, Validators.min(1)]),
       'id': new FormControl(this.meal.id)
     });
     this.setRecipes(id);

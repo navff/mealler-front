@@ -28,6 +28,7 @@
               <label for='portions'>{{ 'meals.portions-count' | translate}}</label>
               <input cInput formControlName='portions'
                      id='portions'
+                     min='1'
                      type='number'>
             </c-form-group>
 
@@ -35,6 +36,7 @@
               <label for='cookingTime'>{{ 'meals.cooking-time' | translate}}</label>
               <input cInput formControlName='cookingTime'
                      id='cookingTime'
+                     min='1'
                      type='number'>
             </c-form-group>
 
@@ -64,7 +66,7 @@
             </c-col>
 
             <c-form-group class='form-actions'>
-              <button [disabled]='mealForm.pristine'
+              <button [disabled]='mealForm.pristine || mealForm.invalid'
                       cButton
                       class='mfe-1'
                       color='success'
