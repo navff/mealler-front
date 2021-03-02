@@ -17,9 +17,9 @@
 
 // VALIDATION
 // -------------------------------
-input.ng-invalid,
-textarea.ng-invalid,
-ng-select.ng-invalid {
+input.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched,
+ng-select.ng-invalid.ng-touched {
   border: 1px solid red;
   border-radius: 5px;
 }
