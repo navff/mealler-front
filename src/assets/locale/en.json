@@ -23,6 +23,7 @@
     "name-placeholder": "Please input event name"
   },
   "ingredients": {
+    "add-ingredient": "Add ingredient",
     "cost": "Cost",
     "count": "Count",
     "ingredient": "Ingredient",
@@ -33,7 +34,7 @@
     "edit-selected-recipe": "Edit selected recipe",
     "labor-costs": "Labor costs",
     "meal": "Meal",
-    "portions-count": "Portions count",
+    "portions-count": "Servings count",
     "recipe-placeholder": "Please choose recipe"
   },
   "navigation": {
@@ -47,8 +48,10 @@
   "recipe": {},
   "recipes": {
     "calculation-for": "Calculation for",
-    "laborCosts": "Labor costs",
-    "portions-count": "Portions count",
+    "cooking-time": "Cooking time",
+    "labor-costs": "Labor costs",
+    "portions-count": "Servings count",
+    "portions-count-hint": "How many servings is the recipe designed for?",
     "recipe": "Recipe"
   },
   "titles": {

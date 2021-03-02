@@ -9,10 +9,10 @@
     "save": "Сохранить",
     "title": "Mealler | Помощник для кейтеринга",
     "units": {
+      "gr": "гр",
       "hours": "час",
-      "kg": "кг",
       "items": "шт",
-      "gr": "гр"
+      "kg": "кг"
     }
   },
   "events": {
@@ -26,6 +26,7 @@
     "name-placeholder": "Введите название мероприятия"
   },
   "ingredients": {
+    "add-ingredient": "Добавить ингридиент",
     "cost": "Стоимость",
     "count": "Количество",
     "ingredient": "Ингридиент",
@@ -50,11 +51,11 @@
   },
   "recipes": {
     "calculation-for": "Расчёт для",
+    "cooking-time": "Время приготовления",
     "labor-costs": "Трудозатраты (час.)",
     "portions-count": "Количество порций",
     "portions-count-hint": "На какое количество порций рассчитан рецепт",
-    "recipe": "Рецепт",
-    "cooking-time": "Время приготовления"
+    "recipe": "Рецепт"
   },
   "titles": {
     "events-page": "События",

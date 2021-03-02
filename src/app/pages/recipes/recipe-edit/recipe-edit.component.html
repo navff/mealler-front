@@ -22,7 +22,7 @@
               <label for='portions'>{{ 'recipes.portions-count' | translate}}</label>
               <input cInput formControlName='portions'
                      id='portions'
-                     type='number'>
+                     min='1' type='number'>
               <small>{{ 'recipes.portions-count-hint' | translate}}</small>
             </c-form-group>
 
@@ -52,6 +52,7 @@
                   <ng-select
                     [clearable]='true'
                     [items]='ingredientsDropdownItems'
+                    (change)='onChangeIngredient($event, ingredientCtrl)'
                     class='bootstrap'
                     formControlName='ingredient'
                     id='ingredientId'
@@ -62,6 +63,8 @@
                 <c-form-group class='col-3'>
                   <label class='sr-only' for='ingredientAmount'>{{ 'ingredients.count' | translate }}</label>
                   <input [isDisabled]='ingredientCtrl.ingredient.amount<=0' cInput
+                         (change)='onChangeAmount($event, ingredientCtrl.ingredient)'
+                         min='1' type='number'
                          formControlName='ingredientAmount'
                          id='ingredientAmount'
                          placeholder="{{ 'common.units.'+ingredientCtrl.ingredient.unit | translate }}"
@@ -70,8 +73,9 @@
                 </c-form-group>
 
                 <c-form-group class='col-2'>
-                  <button (click)='onRemoveIngredient(ingredientCtrl, i)' cButton
-                          class='mr-1 mb-1' color='pinterest'
+                  <button (click)='onRemoveIngredient(ingredientCtrl, i)'
+                          cButton
+                          class='mr-1 mb-1' color='instagram'
                           size='sm'
                           style='margin: 5px 0 0 5px'>
                     <c-icon name='cil-trash' size='sm'></c-icon>
@@ -80,12 +84,15 @@
               </ng-container>
             </div> <!-- End Ingredients -->
 
-            <button class='btn-sm btn btn-ghost-info'>Add ingredient</button>
+            <button (click)='onAddIngredient()'
+                    class='btn-sm btn btn-ghost-info'
+            >{{ 'ingredients.add-ingredient' | translate }}
+            </button>
 
             <hr />
             <!-- Form actions -->
             <c-form-group class='form-actions'>
-              <button [disabled]='recipeForm.pristine'
+              <button [disabled]='recipeForm.pristine || recipeForm.invalid'
                       cButton
                       class='mfe-1'
                       color='success'

@@ -8,10 +8,11 @@ import {
   FormArray,
   FormControl,
   FormGroup,
-  ValidatorFn
+  ValidatorFn,
+  Validators
 } from '@angular/forms';
 import { RecipesService } from '../recipes.service';
-import { Ingredient, RecipeIngredient } from '../../../models/ingredient';
+import { RecipeIngredient } from '../../../models/ingredient';
 import { IngredientsService } from '../../ingredients/ingredients.service';
 import { Location } from '@angular/common';
 
@@ -41,10 +42,10 @@ export class RecipeEditComponent implements OnInit {
     this.recipe = this.recipesService.getById(id);
 
     this.recipeForm = new FormGroup({
-      'name': new FormControl(this.recipe.name),
-      'portions': new FormControl(this.recipe.portions),
-      'laborCosts': new FormControl(this.recipe.laborCosts),
-      'cookingTime': new FormControl(this.recipe.cookingTime),
+      'name': new FormControl(this.recipe.name, [Validators.required]),
+      'portions': new FormControl(this.recipe.portions, [Validators.required, Validators.min(1)]),
+      'laborCosts': new FormControl(this.recipe.laborCosts, [Validators.required]),
+      'cookingTime': new FormControl(this.recipe.cookingTime, [Validators.required]),
       'ingredients': this.createIngredientsFormControls()
     });
 
@@ -65,14 +66,57 @@ export class RecipeEditComponent implements OnInit {
     this.recipeForm.markAsDirty();
   }
 
+  onAddIngredient() {
+    (<FormArray>this.recipeForm.get('ingredients')).push(
+      new IngredientFormGroup({
+          'ingredient': new FormControl('', [Validators.required]),
+          'ingredientAmount': new FormControl('', [Validators.required, Validators.min(1)])
+        }, null, null,
+        {
+          recipeId: this.recipe.id,
+          ingredientId: 0,
+          ingredientName: '',
+          amount: 0,
+          unit: 'kg'
+        }));
+    this.recipeForm.markAsDirty();
+  }
+
+  onChangeAmount(event, ingredient: RecipeIngredient) {
+    const value = event.target.value;
+    ingredient.amount = value;
+  }
+
+  onChangeIngredient(event, ingredientFormGroup: IngredientFormGroup) {
+    if (!event) {
+      return;
+    }
+    const ingredientId = event.value;
+    this.ingredientsService.getById(ingredientId).then(ingredient => {
+      ingredientFormGroup.ingredient = {
+        amount: ingredientFormGroup.ingredient.amount,
+        ingredientId: ingredient.id,
+        ingredientName: ingredient.name,
+        recipeId: ingredientFormGroup.ingredient.recipeId,
+        unit: ingredient.unit
+      };
+    });
+  }
+
   // TODO: при выборе ингредиента переустановить единицу измерения
 
   private createIngredientsFormControls(): FormArray {
     const formGroups = [];
     for (const ingredient of this.recipe.ingredients) {
       const formGroup = new IngredientFormGroup({
-        'ingredient': new FormControl({ label: ingredient.ingredientName, value: ingredient.ingredientId }),
-        'ingredientAmount': new FormControl(ingredient.amount)
+        'ingredient': new FormControl(
+          { label: ingredient.ingredientName, value: ingredient.ingredientId },
+          [Validators.required]
+        ),
+        'ingredientAmount': new FormControl(
+          ingredient.amount,
+          [Validators.required, Validators.min(1)]
+        )
       }, null, null, ingredient);
       formGroups.push(formGroup);
     }
@@ -86,13 +130,6 @@ export class RecipeEditComponent implements OnInit {
         value: value.id
       };
     });
-  }
-
-  private convertIngredientToDropdown(ingredient: Ingredient) {
-    return {
-      label: ingredient.name,
-      value: ingredient.id
-    };
   }
 }
 

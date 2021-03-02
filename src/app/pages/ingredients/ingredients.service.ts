@@ -62,4 +62,10 @@ export class IngredientsService {
       }
     ];
   }
+
+  getById(id: number): Promise<Ingredient> {
+    const ingredients = this.getIngredients();
+    const result = ingredients.find(value => value.id === id);
+    return Promise.resolve(result);
+  }
 }
