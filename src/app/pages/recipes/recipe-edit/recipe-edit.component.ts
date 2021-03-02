@@ -55,6 +55,7 @@ export class RecipeEditComponent implements OnInit {
 
   onSaveRecipe() {
     console.log('RECIPE: ', this.recipeForm.value);
+    this.location.back();
   }
 
   onCancel() {
@@ -102,8 +103,6 @@ export class RecipeEditComponent implements OnInit {
       };
     });
   }
-
-  // TODO: при выборе ингредиента переустановить единицу измерения
 
   private createIngredientsFormControls(): FormArray {
     const formGroups = [];
