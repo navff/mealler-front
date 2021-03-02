@@ -44,8 +44,9 @@ export class RecipeEditComponent implements OnInit {
     this.recipeForm = new FormGroup({
       'name': new FormControl(this.recipe.name, [Validators.required]),
       'portions': new FormControl(this.recipe.portions, [Validators.required, Validators.min(1)]),
-      'laborCosts': new FormControl(this.recipe.laborCosts, [Validators.required]),
-      'cookingTime': new FormControl(this.recipe.cookingTime, [Validators.required]),
+      'laborCosts': new FormControl(this.recipe.laborCosts, [Validators.required, Validators.min(1)]),
+      'cookingTime': new FormControl(this.recipe.cookingTime, [Validators.required, Validators.min(1)]),
+      'description': new FormControl(this.recipe.description),
       'ingredients': this.createIngredientsFormControls()
     });
 

@@ -52,6 +52,8 @@
   "recipes": {
     "calculation-for": "Расчёт для",
     "cooking-time": "Время приготовления",
+    "description": "Подробное описание",
+    "description-placeholder": "(необязательно)",
     "labor-costs": "Трудозатраты (час.)",
     "portions-count": "Количество порций",
     "portions-count-hint": "На какое количество порций рассчитан рецепт",

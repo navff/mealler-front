@@ -7,6 +7,7 @@ export class Recipe implements IRecipe {
   portions: number;
   laborCosts: number;
   cookingTime: number;
+  description: string;
 }
 
 export interface IRecipe {

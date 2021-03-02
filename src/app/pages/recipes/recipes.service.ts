@@ -18,7 +18,8 @@ export class RecipesService {
         laborCosts: 1.5,
         portions: 5,
         ingredients: ingredients,
-        cookingTime: 2.5
+        cookingTime: 2.5,
+        description: ''
       },
       {
         id: 2,
@@ -26,7 +27,8 @@ export class RecipesService {
         laborCosts: 3.5,
         portions: 10,
         ingredients: ingredients,
-        cookingTime: 4.0
+        cookingTime: 4.0,
+        description: 'Взять немножечко укропу'
       },
       {
         id: 3,
@@ -34,7 +36,8 @@ export class RecipesService {
         laborCosts: 3.3,
         portions: 4,
         ingredients: ingredients,
-        cookingTime: 3.5
+        cookingTime: 3.5,
+        description: ''
       },
       {
         id: 4,
@@ -42,7 +45,8 @@ export class RecipesService {
         laborCosts: 2.2,
         portions: 6,
         ingredients: ingredients,
-        cookingTime: 2.5
+        cookingTime: 2.5,
+        description: 'Сделать пирожки с капустой очень просто'
       },
       {
         id: 5,
@@ -50,7 +54,8 @@ export class RecipesService {
         laborCosts: 1.5,
         portions: 5,
         ingredients: ingredients,
-        cookingTime: 2.0
+        cookingTime: 2.0,
+        description: ''
       },
       {
         id: 6,
@@ -58,7 +63,8 @@ export class RecipesService {
         laborCosts: 3.5,
         portions: 10,
         ingredients: ingredients,
-        cookingTime: 4.0
+        cookingTime: 4.0,
+        description: ''
       },
       {
         id: 7,
@@ -66,7 +72,8 @@ export class RecipesService {
         laborCosts: 3.6,
         portions: 15,
         ingredients: ingredients,
-        cookingTime: 3.8
+        cookingTime: 3.8,
+        description: 'Засыпать манку, сахар и масло и перемешать'
       },
       {
         id: 8,
@@ -74,7 +81,8 @@ export class RecipesService {
         laborCosts: 2.5,
         portions: 8,
         ingredients: ingredients,
-        cookingTime: 2.8
+        cookingTime: 2.8,
+        description: ''
       }
     ];
   }

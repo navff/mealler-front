@@ -40,6 +40,13 @@
                      type='number'>
             </c-form-group>
 
+            <c-form-group class='col-12' style='padding-left: 0'>
+              <label for='description'>{{ 'recipes.description' | translate}}</label>
+              <textarea cTextarea formControlName='description' id='description'
+                        placeholder="{{ 'recipes.description-placeholder' | translate}}"
+                        rows='7'></textarea>
+            </c-form-group>
+
             <!-- Ingredients -->
             <h5>{{ 'ingredients.ingredients' | translate}}:</h5>
             <div *ngFor='let ingredientCtrl of this.ingredientsFromArrayControls; let i = index'

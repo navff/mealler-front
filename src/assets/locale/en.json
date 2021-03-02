@@ -49,6 +49,8 @@
   "recipes": {
     "calculation-for": "Calculation for",
     "cooking-time": "Cooking time",
+    "description": "Detailed description",
+    "description-placeholder": "(not required)",
     "labor-costs": "Labor costs",
     "portions-count": "Servings count",
     "portions-count-hint": "How many servings is the recipe designed for?",
