@@ -51,13 +51,19 @@
   },
   "recipes": {
     "calculation-for": "Расчёт для",
-    "cooking-time": "Время приготовления",
+    "cooking-time": "Время приготовления (час.)",
+    "cooking-time-short": "час.",
     "description": "Подробное описание",
     "description-placeholder": "(необязательно)",
-    "labor-costs": "Трудозатраты (час.)",
+    "labor-costs": "Трудозатраты (ч-час.)",
+    "labor-costs-short": "ч-час",
+    "name": "Название",
     "portions-count": "Количество порций",
+    "portions-count-short": "Порций",
     "portions-count-hint": "На какое количество порций рассчитан рецепт",
     "recipe": "Рецепт",
+    "recipes": "Рецепты",
+    "search-by-name": "Найти по названию",
     "select-ingredient-placeholder": "Выберите ингредиент"
   },
   "titles": {

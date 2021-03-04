@@ -52,9 +52,12 @@
     "description": "Detailed description",
     "description-placeholder": "(not required)",
     "labor-costs": "Labor costs",
+    "name": "",
     "portions-count": "Servings count",
     "portions-count-hint": "How many servings is the recipe designed for?",
     "recipe": "Recipe",
+    "recipes": "",
+    "search-by-name": "",
     "select-ingredient-placeholder": "Select ingredient"
   },
   "titles": {

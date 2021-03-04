@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 import { PerfectScrollbarConfigInterface, PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 
 // Import containers
@@ -57,6 +57,8 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { RecipeEditComponent } from './pages/recipes/recipe-edit/recipe-edit.component';
 import { RecipesListComponent } from './pages/recipes/recipes-list/recipes-list.component';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { DataTableModule } from '@pascalhonegger/ng-datatable';
+import { DataFilterPipe } from './pipes/data-filter.pipe';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -107,7 +109,9 @@ const APP_CONTAINERS = [
       useDefaultLang: false
     }),
     NgSelectModule,
-    TooltipModule
+    TooltipModule,
+    DataTableModule,
+    FormsModule
   ],
   exports: [SharedModule],
 
@@ -125,7 +129,8 @@ const APP_CONTAINERS = [
     EventEditComponent,
     MealEditComponent,
     RecipeEditComponent,
-    RecipesListComponent
+    RecipesListComponent,
+    DataFilterPipe
   ],
   providers: [
     {

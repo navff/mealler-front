@@ -68,7 +68,7 @@ export const routes: Routes = [
             path: 'edit/:id',
             component: RecipeEditComponent,
             data: {
-              title: 'Edit event'
+              title: 'Edit recipe'
             }
           }
         ]
