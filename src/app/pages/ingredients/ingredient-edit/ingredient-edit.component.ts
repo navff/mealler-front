@@ -25,10 +25,8 @@ export class IngredientEditComponent implements OnInit {
         name: new FormControl(this.ingredient.name, [Validators.required]),
         price: new FormControl(this.ingredient.price, [Validators.required]),
         unit: new FormControl(this.ingredient.unit, [Validators.required]),
-        calculator: new FormGroup({
-          price: new FormControl('0', [Validators.required, Validators.min(0.01)]),
-          amount: new FormControl(1)
-        })
+        packPrice: new FormControl('0', [Validators.required, Validators.min(0.01)]),
+        packAmount: new FormControl(1, [Validators.required, Validators.min(0.01)])
       });
     });
 
@@ -48,8 +46,8 @@ export class IngredientEditComponent implements OnInit {
   }
 
   getOneItemPrice() {
-    const price = this.ingredientForm.value.calculator.price;
-    const amount = this.ingredientForm.value.calculator.amount;
+    const price = this.ingredientForm.value.packPrice;
+    const amount = this.ingredientForm.value.packAmount;
     return (price / amount).toFixed(2);
   }
 }
