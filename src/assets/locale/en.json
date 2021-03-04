@@ -24,10 +24,16 @@
   },
   "ingredients": {
     "add-ingredient": "Add ingredient",
+    "calculation-price": "Price calculation",
     "cost": "Cost",
     "count": "Count",
+    "for": "for",
     "ingredient": "Ingredient",
-    "ingredients": "Ingredients"
+    "ingredients": "Ingredients",
+    "name": "Name",
+    "price-is": "Price is",
+    "price-short": "₽",
+    "unit-short": "units"
   },
   "meals": {
     "cooking-time": "Cooking time",
@@ -49,15 +55,18 @@
   "recipes": {
     "calculation-for": "Calculation for",
     "cooking-time": "Cooking time",
+    "cooking-time-short": "Hours",
     "description": "Detailed description",
     "description-placeholder": "(not required)",
     "labor-costs": "Labor costs",
-    "name": "",
+    "labor-costs-short": "Human hours",
+    "name": "Name",
     "portions-count": "Servings count",
     "portions-count-hint": "How many servings is the recipe designed for?",
+    "portions-count-short": "Count",
     "recipe": "Recipe",
-    "recipes": "",
-    "search-by-name": "",
+    "recipes": "Recipes",
+    "search-by-name": "Search by name",
     "select-ingredient-placeholder": "Select ingredient"
   },
   "titles": {

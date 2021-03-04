@@ -59,6 +59,8 @@ import { RecipesListComponent } from './pages/recipes/recipes-list/recipes-list.
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { DataTableModule } from '@pascalhonegger/ng-datatable';
 import { DataFilterPipe } from './pipes/data-filter.pipe';
+import { IngredientsListComponent } from './pages/ingredients/ingredients-list/ingredients-list.component';
+import { IngredientEditComponent } from './pages/ingredients/ingredient-edit/ingredient-edit.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -130,7 +132,9 @@ const APP_CONTAINERS = [
     MealEditComponent,
     RecipeEditComponent,
     RecipesListComponent,
-    DataFilterPipe
+    DataFilterPipe,
+    IngredientsListComponent,
+    IngredientEditComponent
   ],
   providers: [
     {

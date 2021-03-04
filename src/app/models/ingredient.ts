@@ -3,8 +3,7 @@ import { IdNameEntity } from './abstract/IdNameEntity';
 export class Ingredient implements IdNameEntity {
   id: number;
   name: string;
-  description: string;
-  priceAvg?: number;
+  price?: number;
   unit: string;
 }
 

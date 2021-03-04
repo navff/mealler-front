@@ -1,0 +1,72 @@
+<div class='fade-in'>
+  <c-card>
+    <c-card-body>
+      <c-row class='mb-3'>
+        <c-col md='6'>
+          <h1>{{'ingredients.ingredient' | translate}}</h1>
+        </c-col>
+        <c-col md='6'>
+          <div class='input-group'>
+            <div class='input-group-prepend'>
+              <span class='input-group-text'><i class='cil-search'></i></span>
+            </div>
+            <input [(ngModel)]='filterQuery'
+                   cInput
+                   placeholder="{{'recipes.search-by-name' | translate}}"
+            />
+          </div>
+        </c-col>
+      </c-row>
+      <table
+        #mf='mfDataTable'
+        [mfData]='data | dataFilter: filterQuery'
+        [mfRowsOnPage]='50'
+        class='table table-striped table-hover table-responsive-lg'
+      >
+        <thead>
+        <tr>
+          <th style='width:70%;'>
+            <mfDefaultSorter #sortName by='name'>
+              {{'ingredients.name' | translate}}
+              <span
+                *ngIf='sortName.isSortedByMeAsc'
+                aria-hidden='true'
+                class='cil-arrow-top'
+              ></span>
+              <span
+                *ngIf='sortName.isSortedByMeDesc'
+                aria-hidden='true'
+                class='cil-arrow-bottom'
+              ></span>
+            </mfDefaultSorter>
+          </th>
+          <th style='width: 10%;'>
+            {{'ingredients.price-short' | translate}}
+          </th>
+          <th style='width: 10%;'>
+            {{'ingredients.unit-short' | translate}}
+          </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr (click)='onItemClicked(item.id)'
+            *ngFor='let item of mf.data'
+            style='cursor: pointer'>
+          <td>{{ item.name }}</td>
+          <td>{{ item.price }}</td>
+          <td>{{ item.unit }}</td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+          <td colspan='5'>
+            <mfBootstrapPaginator
+              [rowsOnPageSet]='[30]'
+            ></mfBootstrapPaginator>
+          </td>
+        </tr>
+        </tfoot>
+      </table>
+    </c-card-body>
+  </c-card>
+</div>

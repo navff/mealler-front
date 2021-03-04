@@ -27,11 +27,16 @@
   },
   "ingredients": {
     "add-ingredient": "Добавить ингредиент",
+    "calculation-price": "Расчёт цены за единицу товара",
     "cost": "Стоимость",
     "count": "Количество",
+    "for": "за",
     "ingredient": "Ингредиент",
     "ingredients": "Ингредиенты",
-    "name": "Название"
+    "name": "Название",
+    "price-is": "Цена",
+    "price-short": "₽",
+    "unit-short": "ед.изм"
   },
   "meals": {
     "cooking-time": "Время приготовления",
@@ -59,8 +64,8 @@
     "labor-costs-short": "ч-час",
     "name": "Название",
     "portions-count": "Количество порций",
-    "portions-count-short": "Порций",
     "portions-count-hint": "На какое количество порций рассчитан рецепт",
+    "portions-count-short": "Порций",
     "recipe": "Рецепт",
     "recipes": "Рецепты",
     "search-by-name": "Найти по названию",

@@ -7,11 +7,12 @@ import { EventsComponent } from './pages/events/events.component';
 import { ShoppingListComponent } from './pages/shopping-list/shopping-list.component';
 import { MyAccountComponent } from './pages/my-account/my-account.component';
 import { MyTeamComponent } from './pages/my-team/my-team.component';
-import { IngredientsComponent } from './pages/ingredients/ingredients.component';
 import { EventEditComponent } from './pages/events/event-edit/event-edit.component';
 import { MealEditComponent } from './pages/events/meal-edit/meal-edit.component';
 import { RecipeEditComponent } from './pages/recipes/recipe-edit/recipe-edit.component';
 import { RecipesListComponent } from './pages/recipes/recipes-list/recipes-list.component';
+import { IngredientsListComponent } from './pages/ingredients/ingredients-list/ingredients-list.component';
+import { IngredientEditComponent } from './pages/ingredients/ingredient-edit/ingredient-edit.component';
 
 export const routes: Routes = [
   {
@@ -75,10 +76,23 @@ export const routes: Routes = [
       },
       {
         path: 'ingredients',
-        component: IngredientsComponent,
         data: {
           title: 'Ingredients'
-        }
+        },
+        children: [
+          {
+            path: '',
+            component: IngredientsListComponent,
+            pathMatch: 'full'
+          },
+          {
+            path: 'edit/:id',
+            component: IngredientEditComponent,
+            data: {
+              title: 'Edit ingredient'
+            }
+          }
+        ]
       },
       {
         path: 'shopping-list',

@@ -46,19 +46,19 @@ export class IngredientsService {
         id: 1,
         name: 'Морковка',
         unit: 'kg',
-        description: ''
+        price: 12
       },
       {
         id: 2,
         name: 'Картофель',
         unit: 'kg',
-        description: ''
+        price: 990
       },
       {
         id: 3,
         name: 'Творог',
         unit: 'gr',
-        description: ''
+        price: 570
       }
     ];
   }

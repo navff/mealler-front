@@ -1,0 +1,71 @@
+<div class='fade-in'>
+  <c-row>
+    <c-col lg='10' sm='12' xl='8'>
+      <c-card>
+        <c-card-header>
+          <c-icon name='cil-pencil' size='sm'></c-icon>&nbsp;
+          {{'ingredients.ingredient' | translate}}: <strong>{{ingredient.name}}</strong>
+
+        </c-card-header>
+        <c-card-body>
+          <form (ngSubmit)='onSaveIngredient()' [formGroup]='ingredientForm'>
+
+            <c-form-group>
+              <label for='name'>{{ 'common.name' | translate}}</label>
+              <input cInput formControlName='name'
+                     id='name'
+                     style='width: 100%'>
+            </c-form-group>
+
+            <h6>{{ 'ingredients.calculation-price' | translate}}:</h6>
+            <div class='row g-3'
+                 formGroupName='calculator'
+                 style='margin-bottom: 20px;'>
+              <div class='col-auto' style='padding-right: 0; margin-top: 5px;'>
+                {{'ingredients.price-is' | translate}}:
+              </div>
+              <div class='col-auto' style='padding-right: 0'>
+                <input
+                  class='form-control'
+                  formControlName='price'
+                  type='number'>
+              </div>
+              <div class='col-auto' style='padding-right: 0; margin-top: 5px;'>
+                <span>{{ 'common.currency' | translate}}&nbsp; &nbsp;{{'ingredients.for' | translate}}</span>
+              </div>
+              <div class='col-auto' style=' padding-right: 0;'>
+                <input class='form-control'
+                       formControlName='amount'
+                       style='width: 80px'
+                       type='number'>
+              </div>
+              <div class='col-auto' style='padding-right: 0; margin-top: 5px;'>
+                {{'common.units.' + ingredient.unit | translate}} =
+              </div>
+              <div class='col-auto' style=' margin-top: 5px;'>
+                <b>{{getOneItemPrice()}} {{ 'common.currency' | translate}}
+                  /{{'common.units.' + ingredient.unit | translate}}</b>
+              </div>
+            </div>
+
+            <hr />
+            <!-- Form actions -->
+            <c-form-group class='form-actions'>
+              <button [disabled]='ingredientForm.pristine || ingredientForm.invalid'
+                      cButton
+                      class='mfe-1'
+                      color='success'
+                      type='submit'
+              >{{ 'common.save' | translate}}</button>
+
+              <button (click)='onCancel()'
+                      cButton
+                      color='secondary'
+              >{{ 'common.cancel' | translate}}</button>
+            </c-form-group>
+          </form>
+        </c-card-body>
+      </c-card>
+    </c-col>
+  </c-row>
+</div>

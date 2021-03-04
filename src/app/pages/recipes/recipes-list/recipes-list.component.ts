@@ -29,11 +29,6 @@ export class RecipesListComponent implements OnInit {
     * */
   }
 
-  public sortByWordLength = (a: any) => {
-    return a.name.length;
-    // tslint:disable-next-line:semicolon
-  };
-
   ngOnInit(): void {
   }
 
