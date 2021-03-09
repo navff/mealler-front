@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Ingredient } from '../../../models/ingredient';
+import { Ingredient, Units } from '../../../models/ingredient';
 import { IngredientsService } from '../ingredients.service';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
@@ -13,6 +13,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class IngredientEditComponent implements OnInit {
   ingredient: Ingredient;
   ingredientForm: FormGroup;
+  units = Object.keys(Units);
 
   constructor(private ingredientsService: IngredientsService,
               private route: ActivatedRoute,
@@ -49,5 +50,9 @@ export class IngredientEditComponent implements OnInit {
     const price = this.ingredientForm.value.packPrice;
     const amount = this.ingredientForm.value.packAmount;
     return (price / amount).toFixed(2);
+  }
+
+  onUnitChange() {
+    this.ingredient.unit = this.ingredientForm.value.unit;
   }
 }

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Ingredient, RecipeIngredient } from '../../models/ingredient';
+import { Ingredient, RecipeIngredient, Units } from '../../models/ingredient';
 
 @Injectable({ providedIn: 'root' })
 export class IngredientsService {
@@ -10,28 +10,28 @@ export class IngredientsService {
         ingredientId: 1,
         ingredientName: 'Морковка',
         recipeId: recipeId,
-        unit: 'items'
+        unit: Units.kg
       },
       {
         amount: 20,
         ingredientId: 2,
         ingredientName: 'Картофель',
         recipeId: recipeId,
-        unit: 'kg'
+        unit: Units.kg
       },
       {
         amount: 5.5,
         ingredientId: 3,
         ingredientName: 'Сгущёнка',
         recipeId: recipeId,
-        unit: 'gr'
+        unit: Units.gr
       },
       {
         amount: 8,
         ingredientId: 4,
         ingredientName: 'Ананас вяленый с собственном соку',
         recipeId: recipeId,
-        unit: 'items'
+        unit: Units.items
       }
     ];
   }
@@ -45,19 +45,19 @@ export class IngredientsService {
       {
         id: 1,
         name: 'Морковка',
-        unit: 'kg',
+        unit: Units.kg,
         price: 12
       },
       {
         id: 2,
         name: 'Картофель',
-        unit: 'kg',
+        unit: Units.kg,
         price: 990
       },
       {
         id: 3,
         name: 'Творог',
-        unit: 'gr',
+        unit: Units.gr,
         price: 570
       }
     ];

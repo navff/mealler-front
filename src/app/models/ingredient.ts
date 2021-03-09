@@ -4,7 +4,7 @@ export class Ingredient implements IdNameEntity {
   id: number;
   name: string;
   price?: number;
-  unit: string;
+  unit: Units;
 }
 
 export class RecipeIngredient {
@@ -12,5 +12,12 @@ export class RecipeIngredient {
   ingredientId: number;
   ingredientName: string;
   amount: number;
-  unit: string;
+  unit: Units;
+}
+
+export enum Units {
+  kg = 'kg',
+  gr = 'gr',
+  items = 'items',
+  l = 'l'
 }

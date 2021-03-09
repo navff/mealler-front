@@ -17,6 +17,16 @@
                      style='width: 100%'>
             </c-form-group>
 
+            <c-form-group>
+              <label cLabel='col' for='select1'>{{'ingredients.unit' | translate}}</label>
+              <select (change)='onUnitChange()' cSelect
+                      class='col-6 col-lg-4'
+                      formControlName='unit'
+                      id='select1'>
+                <option *ngFor='let unit of units' value='{{unit}}'>{{ 'common.units.' + unit | translate}}</option>
+              </select>
+            </c-form-group>
+
             <h6>{{ 'ingredients.calculation-price' | translate}}:</h6>
             <div class='row g-3'
                  style='margin-bottom: 20px;'>

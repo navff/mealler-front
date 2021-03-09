@@ -4,12 +4,17 @@
     "currency": "$",
     "man-hour": "man-hours",
     "name": "Name",
+    "please-select": "Please select",
     "portions": "portions",
     "remove": "Remove",
     "save": "Save",
     "title": "Mealler | Catering help system",
     "units": {
-      "hours": "hrs."
+      "gr": "gr",
+      "hours": "hrs.",
+      "items": "items",
+      "kg": "kg",
+      "l": "l"
     }
   },
   "events": {
@@ -33,6 +38,7 @@
     "name": "Name",
     "price-is": "Price is",
     "price-short": "₽",
+    "unit": "Unit",
     "unit-short": "units"
   },
   "meals": {

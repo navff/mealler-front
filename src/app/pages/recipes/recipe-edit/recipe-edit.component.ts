@@ -12,7 +12,7 @@ import {
   Validators
 } from '@angular/forms';
 import { RecipesService } from '../recipes.service';
-import { RecipeIngredient } from '../../../models/ingredient';
+import { RecipeIngredient, Units } from '../../../models/ingredient';
 import { IngredientsService } from '../../ingredients/ingredients.service';
 import { Location } from '@angular/common';
 
@@ -79,7 +79,7 @@ export class RecipeEditComponent implements OnInit {
           ingredientId: 0,
           ingredientName: '',
           amount: 0,
-          unit: 'kg'
+          unit: Units.kg
         }));
     this.recipeForm.markAsDirty();
   }
