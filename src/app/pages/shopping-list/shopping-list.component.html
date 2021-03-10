@@ -1,1 +1,73 @@
-<p>shopping-list works!</p>
+<div class='fade-in'>
+  <c-card>
+    <c-card-body>
+      <c-row class='mb-3'>
+        <c-col md='12'>
+          <h1>{{'shopping-list.shopping-list' | translate}}</h1>
+        </c-col>
+      </c-row>
+      <table
+        #mf='mfDataTable'
+        [mfData]='shoppingList.ingredients'
+        [mfRowsOnPage]='100'
+        class='table table-striped table-hover table-responsive-lg'
+      >
+        <thead>
+        <tr>
+          <th style='width:5%;'>
+          </th>
+          <th style='width:50%;'>
+            {{'ingredients.name' | translate}}
+          </th>
+          <th style='width: 20%;'>
+            {{'ingredients.price-is' | translate}}
+          </th>
+          <th style='width: 10%;'>
+            {{'ingredients.count' | translate}}
+          </th>
+          <th style='width: 10%;'>
+            {{'ingredients.cost' | translate}}
+          </th>
+          <th style='width:5%;'>
+          </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr
+          *ngFor='let item of mf.data'
+          [ngClass]='{bought:item.bought}'>
+          <td>
+            <input (change)='onBoughtCheckboxChange($event, item.id, item)'
+                   [checked]='item.bought'
+                   type='checkbox'>
+          </td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.packPrice }}{{'common.currency' | translate}}
+            {{'ingredients.for' | translate}}
+            {{item.packAmount}} {{'common.units.' + item.unit | translate}}</td>
+          <td>{{ item.amount }} {{'common.units.' + item.unit | translate}}</td>
+          <td>{{ item.cost }} {{'common.currency' | translate}}</td>
+          <td>
+            <button (click)='onRemoveIngredient($event, item)'
+                    cButton
+                    class='mr-1 mb-1' color='instagram'
+                    size='sm'
+                    style='margin: 5px 0 0 5px'>
+              <c-icon name='cil-trash' size='sm'></c-icon>
+            </button>
+          </td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+          <td colspan='5'>
+            <mfBootstrapPaginator
+              [rowsOnPageSet]='[100]'
+            ></mfBootstrapPaginator>
+          </td>
+        </tr>
+        </tfoot>
+      </table>
+    </c-card-body>
+  </c-card>
+</div>

@@ -76,8 +76,8 @@ export class RecipeEditComponent implements OnInit {
         }, null, null,
         {
           recipeId: this.recipe.id,
-          ingredientId: 0,
-          ingredientName: '',
+          id: 0,
+          name: '',
           amount: 0,
           unit: Units.kg
         }));
@@ -97,8 +97,8 @@ export class RecipeEditComponent implements OnInit {
     this.ingredientsService.getById(ingredientId).then(ingredient => {
       ingredientFormGroup.ingredient = {
         amount: ingredientFormGroup.ingredient.amount,
-        ingredientId: ingredient.id,
-        ingredientName: ingredient.name,
+        id: ingredient.id,
+        name: ingredient.name,
         recipeId: ingredientFormGroup.ingredient.recipeId,
         unit: ingredient.unit
       };
@@ -110,7 +110,7 @@ export class RecipeEditComponent implements OnInit {
     for (const ingredient of this.recipe.ingredients) {
       const formGroup = new IngredientFormGroup({
         'ingredient': new FormControl(
-          { label: ingredient.ingredientName, value: ingredient.ingredientId },
+          { label: ingredient.name, value: ingredient.id },
           [Validators.required]
         ),
         'ingredientAmount': new FormControl(

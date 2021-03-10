@@ -74,6 +74,9 @@
     "search-by-name": "Найти по названию",
     "select-ingredient-placeholder": "Выберите ингредиент"
   },
+  "shopping-list": {
+    "shopping-list": "Список покупок"
+  },
   "titles": {
     "events-page": "События",
     "ingredients-page": "Ингредиенты",

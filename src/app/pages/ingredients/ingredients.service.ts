@@ -7,29 +7,29 @@ export class IngredientsService {
     return [
       {
         amount: 1,
-        ingredientId: 1,
-        ingredientName: 'Морковка',
+        id: 1,
+        name: 'Морковка',
         recipeId: recipeId,
         unit: Units.kg
       },
       {
         amount: 20,
-        ingredientId: 2,
-        ingredientName: 'Картофель',
+        id: 2,
+        name: 'Картофель',
         recipeId: recipeId,
         unit: Units.kg
       },
       {
         amount: 5.5,
-        ingredientId: 3,
-        ingredientName: 'Сгущёнка',
+        id: 3,
+        name: 'Сгущёнка',
         recipeId: recipeId,
         unit: Units.gr
       },
       {
         amount: 8,
-        ingredientId: 4,
-        ingredientName: 'Ананас вяленый с собственном соку',
+        id: 4,
+        name: 'Ананас вяленый с собственном соку',
         recipeId: recipeId,
         unit: Units.items
       }

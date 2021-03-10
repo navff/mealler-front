@@ -11,9 +11,20 @@ export class Ingredient implements IdNameEntity {
 
 export class RecipeIngredient {
   recipeId: number;
-  ingredientId: number;
-  ingredientName: string;
+  id: number;
+  name: string;
   amount: number;
+  unit: Units;
+}
+
+export class ShoppingListIngredient {
+  id: number;
+  amount: number;
+  cost: number;
+  bought: boolean;
+  packPrice: number;
+  packAmount: number;
+  name: string;
   unit: Units;
 }
 

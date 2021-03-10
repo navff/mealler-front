@@ -75,6 +75,9 @@
     "search-by-name": "Search by name",
     "select-ingredient-placeholder": "Select ingredient"
   },
+  "shopping-list": {
+    "shopping-list": ""
+  },
   "titles": {
     "events-page": "Events",
     "ingredients-page": "Ingredients",
