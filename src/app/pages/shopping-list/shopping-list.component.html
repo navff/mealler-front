@@ -16,17 +16,14 @@
         <tr>
           <th style='width:5%;'>
           </th>
-          <th style='width:50%;'>
+          <th style='width:60%;'>
             {{'ingredients.name' | translate}}
           </th>
-          <th style='width: 20%;'>
-            {{'ingredients.price-is' | translate}}
+          <th style='width: 15%;'>
+            {{'ingredients.count-short' | translate}}
           </th>
-          <th style='width: 10%;'>
-            {{'ingredients.count' | translate}}
-          </th>
-          <th style='width: 10%;'>
-            {{'ingredients.cost' | translate}}
+          <th style='width: 15%;'>
+            {{'ingredients.price-short' | translate}}
           </th>
           <th style='width:5%;'>
           </th>
@@ -41,12 +38,13 @@
                    [checked]='item.bought'
                    type='checkbox'>
           </td>
-          <td>{{ item.name }}</td>
-          <td>{{ item.packPrice }}{{'common.currency' | translate}}
+          <td>{{ item.name }}<br />
+            {{ item.packPrice }}{{'common.currency' | translate}}
             {{'ingredients.for' | translate}}
-            {{item.packAmount}} {{'common.units.' + item.unit | translate}}</td>
-          <td>{{ item.amount }} {{'common.units.' + item.unit | translate}}</td>
-          <td>{{ item.cost }} {{'common.currency' | translate}}</td>
+            {{item.packAmount}} {{'common.units.' + item.unit | translate}}
+          </td>
+          <td>{{ item.amount }}&nbsp;{{'common.units.' + item.unit | translate}}</td>
+          <td>{{ item.cost }}&nbsp;{{'common.currency' | translate}}</td>
           <td>
             <button (click)='onRemoveIngredient($event, item)'
                     cButton

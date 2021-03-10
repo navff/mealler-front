@@ -32,6 +32,7 @@
     "calculation-price": "Price calculation",
     "cost": "Cost",
     "count": "Count",
+    "count-short": "Count",
     "for": "for",
     "ingredient": "Ingredient",
     "ingredients": "Ingredients",
@@ -76,7 +77,7 @@
     "select-ingredient-placeholder": "Select ingredient"
   },
   "shopping-list": {
-    "shopping-list": ""
+    "shopping-list": "Shopping list"
   },
   "titles": {
     "events-page": "Events",
