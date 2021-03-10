@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { EnvironmentService } from '../../common-services/EnvironmentService';
 import { ShoppingListService } from './shopping-list.service';
 import { ShoppingList } from '../../models/shopping-list';
-import { ShoppingListIngredient } from '../../models/ingredient';
+import { Colors, ShoppingListIngredient } from '../../models/ingredient';
 
 @Component({
   selector: 'app-shopping-list',
@@ -34,4 +34,29 @@ export class ShoppingListComponent implements OnInit {
     const index = this.shoppingList.ingredients.findIndex(x => x.id === item.id);
     this.shoppingList.ingredients.splice(index, 1);
   }
+
+  onRowClick($event: Event, item: ShoppingListIngredient) {
+    console.log('ITEM: ', item);
+    let newColor: Colors;
+    switch (item.color) {
+      case Colors.white:
+        newColor = Colors.blue;
+        break;
+      case Colors.blue:
+        newColor = Colors.green;
+        break;
+      case Colors.green:
+        newColor = Colors.peach;
+        break;
+      case Colors.peach:
+        newColor = Colors.yellow;
+        break;
+      case Colors.yellow:
+        newColor = Colors.white;
+        break;
+    }
+    item.color = newColor;
+  }
 }
+
+

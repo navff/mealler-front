@@ -1,6 +1,6 @@
 import { ShoppingList } from '../../models/shopping-list';
 import { IngredientsService } from '../ingredients/ingredients.service';
-import { Units } from '../../models/ingredient';
+import { Colors, Units } from '../../models/ingredient';
 import { Injectable } from '@angular/core';
 
 @Injectable({ providedIn: 'root' })
@@ -41,7 +41,8 @@ export class ShoppingListService {
           name: 'Картофель',
           packAmount: 1,
           packPrice: 24,
-          unit: Units.kg
+          unit: Units.kg,
+          color: Colors.white
         },
         {
           id: 2,
@@ -51,7 +52,8 @@ export class ShoppingListService {
           name: 'Морковка',
           packAmount: 1,
           packPrice: 56,
-          unit: Units.kg
+          unit: Units.kg,
+          color: Colors.white
         },
         {
           id: 3,
@@ -61,7 +63,8 @@ export class ShoppingListService {
           name: 'Творог',
           packAmount: 400,
           packPrice: 70,
-          unit: Units.gr
+          unit: Units.gr,
+          color: Colors.white
         },
         {
           id: 4,
@@ -71,7 +74,8 @@ export class ShoppingListService {
           name: 'Молоко',
           packAmount: 1,
           packPrice: 50,
-          unit: Units.l
+          unit: Units.l,
+          color: Colors.peach
         }
       ],
       totalCost: 5667

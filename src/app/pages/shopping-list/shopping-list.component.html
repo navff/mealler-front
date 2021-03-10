@@ -10,7 +10,7 @@
         #mf='mfDataTable'
         [mfData]='shoppingList.ingredients'
         [mfRowsOnPage]='100'
-        class='table table-striped table-hover table-responsive-lg'
+        class='table table-responsive-lg'
       >
         <thead>
         <tr>
@@ -31,7 +31,9 @@
         </thead>
         <tbody>
         <tr
+          (dblclick)='onRowClick($event, item)'
           *ngFor='let item of mf.data'
+          class='{{item.color}}'
           [ngClass]='{bought:item.bought}'>
           <td>
             <input (change)='onBoughtCheckboxChange($event, item.id, item)'

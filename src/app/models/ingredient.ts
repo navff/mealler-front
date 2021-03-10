@@ -26,6 +26,7 @@ export class ShoppingListIngredient {
   packAmount: number;
   name: string;
   unit: Units;
+  color: Colors;
 }
 
 export enum Units {
@@ -33,4 +34,12 @@ export enum Units {
   gr = 'gr',
   items = 'items',
   l = 'l'
+}
+
+export enum Colors {
+  green = 'green',
+  blue = 'blue',
+  peach = 'peach',
+  yellow = 'yellow',
+  white = 'white'
 }
