@@ -25,7 +25,7 @@
           <th style='width: 15%;'>
             {{'ingredients.price-short' | translate}}
           </th>
-          <th style='width:5%;'>
+          <th class='d-none d-sm-block d-print-none'>
           </th>
         </tr>
         </thead>
@@ -47,7 +47,7 @@
           </td>
           <td>{{ item.amount }}&nbsp;{{'common.units.' + item.unit | translate}}</td>
           <td>{{ item.cost }}&nbsp;{{'common.currency' | translate}}</td>
-          <td>
+          <td class='d-none d-sm-block d-print-none'>
             <button (click)='onRemoveIngredient($event, item)'
                     cButton
                     class='mr-1 mb-1' color='instagram'
