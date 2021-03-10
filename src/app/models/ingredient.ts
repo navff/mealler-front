@@ -5,6 +5,8 @@ export class Ingredient implements IdNameEntity {
   name: string;
   price?: number;
   unit: Units;
+  packPrice: number;
+  packAmount: number;
 }
 
 export class RecipeIngredient {

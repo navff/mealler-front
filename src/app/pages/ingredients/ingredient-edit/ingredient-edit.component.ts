@@ -26,8 +26,8 @@ export class IngredientEditComponent implements OnInit {
         name: new FormControl(this.ingredient.name, [Validators.required]),
         price: new FormControl(this.ingredient.price, [Validators.required]),
         unit: new FormControl(this.ingredient.unit, [Validators.required]),
-        packPrice: new FormControl('0', [Validators.required, Validators.min(0.01)]),
-        packAmount: new FormControl(1, [Validators.required, Validators.min(0.01)])
+        packPrice: new FormControl(this.ingredient.packPrice, [Validators.required, Validators.min(0.01)]),
+        packAmount: new FormControl(this.ingredient.packAmount, [Validators.required, Validators.min(0.01)])
       });
     });
 
