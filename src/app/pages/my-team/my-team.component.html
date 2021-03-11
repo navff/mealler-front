@@ -1,1 +1,124 @@
-<p>my-team works!</p>
+<div class='fade-in'>
+  <c-row>
+    <c-col md='8' sm='12'>
+      <c-card>
+        <c-card-body>
+          <c-row class='mb-3'>
+            <c-col sm='12'>
+              <h1>{{'titles.my-team-page' | translate}}</h1>
+            </c-col>
+          </c-row>
+          <c-row>
+            <c-col sm='12' xl='6'>
+              <c-form-group [formGroup]='teamNameForm'>
+                <label class='col-form-label' for='appendedInputButton'>{{'my-team.team-name' | translate}}</label>
+                <div class='controls'>
+                  <c-input-group>
+                    <input class='form-control'
+                           formControlName='name'
+                           id='appendedInputButton'
+                           size='16'
+                           type='text'>
+                    <c-input-group-append>
+                      <button (click)='onSaveName()'
+                              [disabled]='teamNameForm.pristine || !teamNameForm.valid'
+                              cButton
+                              class='btn btn-secondary'
+                              type='button'
+                      >{{'common.save' | translate}}</button>
+                    </c-input-group-append>
+                  </c-input-group>
+                </div>
+              </c-form-group>
+
+              <ul cListGroup>
+                <p>{{'my-team.members' | translate}}: </p>
+                <li *ngFor='let member of myTeam.users'
+                    cListGroupItem
+                    class='d-flex justify-content-between align-items-center'>
+                  <div>
+                    {{member.name}} <br />
+                    <small>{{member.email}}</small>
+                  </div>
+
+                  <button (click)='onRemoveMember(member.id)'
+                          cButton class='mr-1 mb-1'
+                          color='instagram'
+                          size='sm'
+                          style='margin: 5px 0 0 5px'>
+                    <c-icon name='cil-trash' size='sm'></c-icon>
+                  </button>
+                </li>
+              </ul>
+            </c-col>
+          </c-row>
+          <c-row class='mb-3' style='margin-top: 20px;'>
+            <c-col sm='12'>
+              <h3>{{'my-team.add-member' | translate}}</h3>
+            </c-col>
+          </c-row>
+          <c-row>
+            <c-col sm='12' xl='6'>
+              <c-form-group [formGroup]='addMemberForm'>
+                <c-input-group>
+                  <input autocomplete='email' cInput
+                         formControlName='email'
+                         placeholder='Email'
+                         type='email'>
+                  <c-input-group-append>
+                    <button (click)='onAddMember()' [disabled]='addMemberForm.pristine || !addMemberForm.valid'
+                            cButton
+                            color='info'
+                    >{{'common.add' | translate}}</button>
+                  </c-input-group-append>
+                </c-input-group>
+              </c-form-group>
+            </c-col>
+          </c-row>
+        </c-card-body>
+      </c-card>
+    </c-col>
+  </c-row>
+
+
+  <c-row>
+    <c-col md='8' sm='12'>
+      <c-card>
+        <c-card-body>
+          <c-row class='mb-3'>
+            <c-col sm='12'>
+              <h2>{{'my-team.my-available-teams' | translate}}</h2>
+            </c-col>
+          </c-row>
+
+          <c-card *ngFor='let team of myTeams'
+                  borderColor="{{(team.id === myTeam.id) ? 'warning' : 'secondary'}}">
+            <c-card-header>
+              <b>{{team.name}}</b>
+              <span *ngIf='team.id === myTeam.id'
+                    class='badge badge-pill badge-warning'
+                    title="{{'my-team.i-am-owner' | translate}}">
+                {{'my-team.mine' | translate}}
+              </span>
+              <c-card-header-actions style='height: 21px;'>
+                <label class='c-switch c-switch-pill c-switch-opposite-success'
+                       title="{{'my-team.switch-to-this-team' | translate}}">
+                  <input (change)='onActivateTeam(team)'
+                         [checked]='team.isActive'
+                         class='c-switch-input'
+                         type='checkbox'>
+                  <span class='c-switch-slider'></span>
+                </label>
+              </c-card-header-actions>
+            </c-card-header>
+            <c-card-body>
+              <p *ngFor='let user of team.users'>{{user.name}} ({{user.email}})</p>
+            </c-card-body>
+          </c-card>
+        </c-card-body>
+      </c-card>
+    </c-col>
+  </c-row>
+
+</div>
+

@@ -1,1 +1,57 @@
-<p>my-account works!</p>
+<div class='fade-in'>
+  <c-card>
+    <c-card-body>
+      <c-row class='mb-3'>
+        <c-col md='6'>
+          <h1>{{'titles.my-account-page' | translate}}</h1>
+          <form [formGroup]='accountForm'>
+            <p></p>
+            <div class='input-group mb-3'>
+              <div class='input-group-prepend'>
+                <span class='input-group-text'>
+                  <c-icon name='cil-user'></c-icon>
+                </span>
+              </div>
+              <input autocomplete='name'
+                     cInput
+                     formControlName='name'
+                     placeholder="{{'account.name' | translate}}"
+              />
+            </div>
+            <div class='input-group mb-3'>
+              <div class='input-group-prepend'>
+                <span class='input-group-text'>
+                  <c-icon name='cil-envelope-closed'></c-icon>
+                </span>
+              </div>
+              <input
+                autocomplete='email'
+                class='form-control'
+                formControlName='email'
+                placeholder="{{'account.email' | translate}}"
+                type='text'
+              />
+            </div>
+
+            <!-- Form actions -->
+            <c-form-group class='form-actions'>
+              <button (click)='onSave()'
+                      [disabled]='accountForm.pristine || accountForm.invalid'
+                      cButton
+                      class='mfe-1'
+                      color='success'
+                      type='submit'
+              >{{ 'common.save' | translate}}</button>
+
+              <button (click)='onCancel()'
+                      cButton
+                      color='secondary'
+              >{{ 'common.cancel' | translate}}</button>
+            </c-form-group>
+          </form>
+        </c-col>
+      </c-row>
+    </c-card-body>
+  </c-card>
+</div>
+

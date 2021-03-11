@@ -1,5 +1,10 @@
 {
+  "account": {
+    "email": "Электропочта",
+    "name": "Имя"
+  },
   "common": {
+    "add": "Добавить",
     "cancel": "Отменить",
     "currency": "₽",
     "man-hour": "ч-час",
@@ -49,6 +54,20 @@
     "meal": "Блюдо",
     "portions-count": "Количество порций",
     "recipe-placeholder": "Выберите рецепт"
+  },
+  "my-team": {
+    "add-member": "Добавить (пригласить) участника ↑",
+    "i-am-owner": "Я владелец этой команды",
+    "members": "Участники",
+    "mine": "Моё",
+    "my-available-teams": "Доступные мне команды",
+    "my-teams": "Мои команды",
+    "team-name": "Название команды",
+    "switch-to-this-team": "Переключиться на эту команду"
+  },
+  "my-teams": {
+    "i-am-owner": "",
+    "mine": ""
   },
   "navigation": {
     "events": "События",

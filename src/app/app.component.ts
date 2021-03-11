@@ -5,11 +5,13 @@ import { IconSetService } from '@coreui/icons-angular';
 import {
   brandSet,
   cilApplicationsSettings,
+  cilEnvelopeClosed,
   cilLibraryAdd,
   cilMoon,
   cilPencil,
   cilSun,
   cilTrash,
+  cilUser,
   cilX,
   flagSet,
   freeSet
@@ -31,7 +33,7 @@ export class AppComponent implements OnInit {
     iconSet.icons = {
       cilMoon, cilSun, cilApplicationsSettings, cilX,
       freeSet, brandSet, flagSet, cilLibraryAdd, cilPencil,
-      cilTrash
+      cilTrash, cilUser, cilEnvelopeClosed
     };
     this.translateService.use(environment.defaultLocale);
   }

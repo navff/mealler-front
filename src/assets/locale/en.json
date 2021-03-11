@@ -1,5 +1,10 @@
 {
+  "account": {
+    "email": "Email",
+    "name": "Email"
+  },
   "common": {
+    "add": "Add",
     "cancel": "Cancel",
     "currency": "$",
     "man-hour": "man-hours",
@@ -49,6 +54,15 @@
     "meal": "Meal",
     "portions-count": "Servings count",
     "recipe-placeholder": "Please choose recipe"
+  },
+  "my-team": {
+    "add-member": "Add (invite) member ↑",
+    "i-am-owner": "I am owner of this team",
+    "members": "Members",
+    "mine": "Mine",
+    "my-available-teams": "My available teams",
+    "team-name": "Team name",
+    "switch-to-this-team": "Переключиться на эту команду"
   },
   "navigation": {
     "events": "Events",
