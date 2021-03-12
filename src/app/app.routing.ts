@@ -13,6 +13,7 @@ import { RecipeEditComponent } from './pages/recipes/recipe-edit/recipe-edit.com
 import { RecipesListComponent } from './pages/recipes/recipes-list/recipes-list.component';
 import { IngredientsListComponent } from './pages/ingredients/ingredients-list/ingredients-list.component';
 import { IngredientEditComponent } from './pages/ingredients/ingredient-edit/ingredient-edit.component';
+import { LoginComponent } from './pages/login/login.component';
 
 export const routes: Routes = [
   {
@@ -116,6 +117,20 @@ export const routes: Routes = [
         }
       }
     ]
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
+    data: {
+      title: 'Login or Register'
+    }
+  },
+  {
+    path: 'login/:token',
+    component: LoginComponent,
+    data: {
+      title: 'Login or Register'
+    }
   }
 ];
 

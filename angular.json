@@ -22,7 +22,8 @@
             ],
             "styles": [
               "./node_modules/tippy.js/dist/tippy.css",
-              "src/scss/style.scss"
+              "src/scss/style.scss",
+              "./node_modules/ngx-toastr/toastr.css"
             ],
             "stylePreprocessorOptions": {
               "includePaths": [

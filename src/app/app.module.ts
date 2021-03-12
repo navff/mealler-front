@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { CommonModule, HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 import { PerfectScrollbarConfigInterface, PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -36,6 +36,7 @@ import { IconModule, IconSetModule, IconSetService } from '@coreui/icons-angular
 
 // 3rd party
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { ToastrModule } from 'ngx-toastr';
 
 // Import routing module
 import { AppRoutingModule } from './app.routing';
@@ -61,6 +62,7 @@ import { DataTableModule } from '@pascalhonegger/ng-datatable';
 import { DataFilterPipe } from './pipes/data-filter.pipe';
 import { IngredientsListComponent } from './pages/ingredients/ingredients-list/ingredients-list.component';
 import { IngredientEditComponent } from './pages/ingredients/ingredient-edit/ingredient-edit.component';
+import { LoginComponent } from './pages/login/login.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -84,6 +86,7 @@ const APP_CONTAINERS = [
     CalloutModule,
     ChartModule,
     CollapseModule,
+    CommonModule,
     DropdownModule,
     GridModule,
     IconModule,
@@ -113,7 +116,12 @@ const APP_CONTAINERS = [
     NgSelectModule,
     TooltipModule,
     DataTableModule,
-    FormsModule
+    FormsModule,
+    ToastrModule.forRoot({
+      timeOut: 4000,
+      positionClass: 'toast-top-center',
+      preventDuplicates: true
+    })
   ],
   exports: [SharedModule],
 
@@ -134,7 +142,8 @@ const APP_CONTAINERS = [
     RecipesListComponent,
     DataFilterPipe,
     IngredientsListComponent,
-    IngredientEditComponent
+    IngredientEditComponent,
+    LoginComponent
   ],
   providers: [
     {

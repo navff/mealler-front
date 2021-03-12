@@ -47,6 +47,11 @@
     "unit": "Unit",
     "unit-short": "units"
   },
+  "login": {
+    "instruction": "We'll send you email with magic link. Follow this link to enter our site. Password is not needed.",
+    "register-or-login": "Login or register",
+    "send-magic-link": "Send magic link"
+  },
   "meals": {
     "cooking-time": "Cooking time",
     "edit-selected-recipe": "Edit selected recipe",
@@ -61,8 +66,8 @@
     "members": "Members",
     "mine": "Mine",
     "my-available-teams": "My available teams",
-    "team-name": "Team name",
-    "switch-to-this-team": "Переключиться на эту команду"
+    "switch-to-this-team": "Переключиться на эту команду",
+    "team-name": "Team name"
   },
   "navigation": {
     "events": "Events",
