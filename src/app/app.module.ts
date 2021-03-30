@@ -63,6 +63,7 @@ import { DataFilterPipe } from './pipes/data-filter.pipe';
 import { IngredientsListComponent } from './pages/ingredients/ingredients-list/ingredients-list.component';
 import { IngredientEditComponent } from './pages/ingredients/ingredient-edit/ingredient-edit.component';
 import { LoginComponent } from './pages/login/login.component';
+import { EmailSentComponent } from './pages/login/email-sent/email-sent.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -143,7 +144,8 @@ const APP_CONTAINERS = [
     DataFilterPipe,
     IngredientsListComponent,
     IngredientEditComponent,
-    LoginComponent
+    LoginComponent,
+    EmailSentComponent
   ],
   providers: [
     {

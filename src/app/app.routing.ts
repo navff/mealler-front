@@ -14,6 +14,7 @@ import { RecipesListComponent } from './pages/recipes/recipes-list/recipes-list.
 import { IngredientsListComponent } from './pages/ingredients/ingredients-list/ingredients-list.component';
 import { IngredientEditComponent } from './pages/ingredients/ingredient-edit/ingredient-edit.component';
 import { LoginComponent } from './pages/login/login.component';
+import { EmailSentComponent } from './pages/login/email-sent/email-sent.component';
 
 export const routes: Routes = [
   {
@@ -123,6 +124,13 @@ export const routes: Routes = [
     component: LoginComponent,
     data: {
       title: 'Login or Register'
+    }
+  },
+  {
+    path: 'login/email-sent',
+    component: EmailSentComponent,
+    data: {
+      title: 'Email sent'
     }
   },
   {

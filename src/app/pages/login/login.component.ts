@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LoginService } from './login.service';
 import { ToastrService } from 'ngx-toastr';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-login',
@@ -11,10 +13,14 @@ import { ToastrService } from 'ngx-toastr';
 export class LoginComponent implements OnInit {
 
   token: string;
+  form = new FormGroup({
+    email: new FormControl('var@33kita.ru', [Validators.email, Validators.required])
+  });
 
   constructor(private route: ActivatedRoute,
               private loginService: LoginService,
               private router: Router,
+              private location: Location,
               private toastr: ToastrService) {
     this.token = route.snapshot.params['token'];
   }
@@ -39,4 +45,13 @@ export class LoginComponent implements OnInit {
     }
   }
 
+  onSendClick() {
+    this.loginService.sendEmailWithToken(this.form.value.email, window.location.host)
+      .then(data => {
+        console.log('RECEIVED_DATA:', data);
+        if (true) {
+          this.router.navigate(['/login/email-sent']);
+        }
+      });
+  }
 }

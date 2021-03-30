@@ -50,7 +50,9 @@
   "login": {
     "instruction": "We'll send you email with magic link. Follow this link to enter our site. Password is not needed.",
     "register-or-login": "Login or register",
-    "send-magic-link": "Send magic link"
+    "send-magic-link": "Send magic link",
+    "email-sent-header": "We have sent you a little email",
+    "email-sent-text": "Check your email. You'll find link there. Follow this link to enter our site."
   },
   "meals": {
     "cooking-time": "Cooking time",
