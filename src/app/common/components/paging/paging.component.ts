@@ -9,18 +9,23 @@ import { PageView } from '../../PageView';
 export class PagingComponent implements OnInit {
   @Input() data: PageView<any>;
   @Output() pageClicked = new EventEmitter<number>();
-  activePage: number;
 
   constructor() {
 
   }
 
+  get visible(): boolean {
+    return (!!this.data && this.data.pagesCount > 1);
+  }
+
+  get activePage(): number {
+    return this.data ? this.data.page : 1;
+  }
+
   ngOnInit(): void {
-    this.activePage = this.data.page;
   }
 
   onPageClick(i: number) {
-    this.activePage = i;
     this.pageClicked.emit(i);
   }
 }

@@ -46,6 +46,7 @@ export class IngredientsListComponent implements OnInit {
   }
 
   onFilterChanged() {
+    this.page = 1;
     this.loadData();
   }
 }

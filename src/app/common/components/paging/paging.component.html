@@ -1,4 +1,4 @@
-<nav *ngIf='data' aria-label='...'>
+<nav *ngIf='visible' aria-label='...'>
   <ul class='pagination'>
     <li *ngFor='let x of [].constructor(data.pagesCount) ;let i = index'
         [ngClass]="(i+1 === activePage) ? 'active' : '' "
