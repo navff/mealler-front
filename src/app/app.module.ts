@@ -49,7 +49,7 @@ import { IngredientsComponent } from './pages/ingredients/ingredients.component'
 import { MissingTranslationHandler, TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { MissingTranslationService } from './common-services/MissingTranslationService';
+import { MissingTranslationService } from './common/services/MissingTranslationService';
 import { MealListItemComponent } from './pages/events/meal-list-item/meal-list-item.component';
 import { EventListItemComponent } from './pages/events/event-list-item/event-list-item.component';
 import { EventEditComponent } from './pages/events/event-edit/event-edit.component';
@@ -64,6 +64,7 @@ import { IngredientsListComponent } from './pages/ingredients/ingredients-list/i
 import { IngredientEditComponent } from './pages/ingredients/ingredient-edit/ingredient-edit.component';
 import { LoginComponent } from './pages/login/login.component';
 import { EmailSentComponent } from './pages/login/email-sent/email-sent.component';
+import { PagingComponent } from './common/components/paging/paging.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -145,7 +146,8 @@ const APP_CONTAINERS = [
     IngredientsListComponent,
     IngredientEditComponent,
     LoginComponent,
-    EmailSentComponent
+    EmailSentComponent,
+    PagingComponent
   ],
   providers: [
     {

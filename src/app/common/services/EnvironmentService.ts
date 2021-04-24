@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { environment } from '../../environments/environment';
+import { environment } from '../../../environments/environment';
 import { TranslateService } from '@ngx-translate/core';
 import { Title } from '@angular/platform-browser';
 import { forkJoin } from 'rxjs';

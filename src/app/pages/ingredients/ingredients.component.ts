@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EnvironmentService } from '../../common-services/EnvironmentService';
+import { EnvironmentService } from '../../common/services/EnvironmentService';
 
 @Component({
   selector: 'app-ingredients',

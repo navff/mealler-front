@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EnvironmentService } from '../../common-services/EnvironmentService';
+import { EnvironmentService } from '../../common/services/EnvironmentService';
 import { Team } from '../../models/team';
 import { TeamService } from './team.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';

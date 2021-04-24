@@ -4,7 +4,7 @@
       <c-card>
         <c-card-header>
           <c-icon name='cil-pencil' size='sm'></c-icon>&nbsp;
-          <strong>{{event.name}} </strong>
+          <strong>{{event.name || ('events.add-event' | translate)}} </strong>
           <div class='float-right'>
             <small> {{event.date | date:'yyyy-MM-dd, hh:mm'}}</small>
           </div>

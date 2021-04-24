@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 export class AccountsService {
   getByToken(token: string): Promise<UserAccount> {
     const result: UserAccount = {
+      id: 9999,
       email: 'test@test.ru',
       name: 'Константин Константинович Константинопольский',
       token: token

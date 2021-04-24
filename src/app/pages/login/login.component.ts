@@ -29,14 +29,20 @@ export class LoginComponent implements OnInit {
     if (this.token) {
       this.loginService.getUserByToken(this.token)
         .then(userAccount => {
-          localStorage.setItem('my_acccount', JSON.stringify(userAccount));
-          if (!userAccount.name) {
-            console.log(userAccount.name);
-            this.router.navigate(['/my-account']);
+          if (userAccount) {
+            userAccount.token = this.token;
+            localStorage.setItem('my_acccount', JSON.stringify(userAccount));
+            if (!userAccount.name) {
+              this.router.navigate(['/my-account']);
+              return;
+            }
+            // const user = JSON.parse(localStorage.getItem("my_acccount"));
+            this.router.navigate(['/']);
             return;
+          } else {
+            // TODO: Редирект куда-нибудь и сообщение об ошибке
+            console.error('Not authenticated!');
           }
-          // const user = JSON.parse(localStorage.getItem("my_acccount"));
-          this.router.navigate(['/']);
         })
         .catch(reason => {
           console.error(reason);

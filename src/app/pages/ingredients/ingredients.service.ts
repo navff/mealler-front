@@ -1,8 +1,20 @@
 import { Injectable } from '@angular/core';
-import { Ingredient, RecipeIngredient, Units } from '../../models/ingredient';
+import { RecipeIngredient, ReferenceIngredient, Units } from '../../models/referenceIngredient';
+import { EnvironmentService } from '../../common/services/EnvironmentService';
+import { HttpClient } from '@angular/common/http';
+import { PageView } from '../../common/PageView';
 
 @Injectable({ providedIn: 'root' })
+
 export class IngredientsService {
+  private apiUrl: string;
+
+  constructor(
+    private environment: EnvironmentService,
+    private httpClient: HttpClient) {
+    this.apiUrl = environment.getValue('apiUrl') + '/ReferenceIngredient/';
+  }
+
   getByRecipe(recipeId: number): RecipeIngredient[] {
     return [
       {
@@ -40,7 +52,7 @@ export class IngredientsService {
     return this.getByRecipe(mealId); // DO something more logical
   }
 
-  getIngredients(): Ingredient[] {
+  getIngredients2(): ReferenceIngredient[] {
     return [
       {
         id: 1,
@@ -69,9 +81,24 @@ export class IngredientsService {
     ];
   }
 
-  getById(id: number): Promise<Ingredient> {
-    const ingredients = this.getIngredients();
-    const result = ingredients.find(value => value.id === id);
-    return Promise.resolve(result);
+  getIngredients(word: string = '', page: number = 1): Promise<PageView<ReferenceIngredient>> {
+    const url = `${this.apiUrl}?word=${word}&page=${page}`;
+    return this.httpClient.get<ReferenceIngredient[]>(url).toPromise().then(
+      value => {
+        return value;
+      })
+      .catch(error => {
+        console.error(error);
+        return null;
+      });
+  }
+
+  getById(id: number): Promise<ReferenceIngredient> {
+    // TODO: переписать эту чушь на нормальный запрос к API
+    return this.getIngredients()
+      .then(((ingredients: PageView<ReferenceIngredient>) => {
+          return ingredients.items.find(value => value.id === id);
+        }
+      ));
   }
 }

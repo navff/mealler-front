@@ -23,7 +23,8 @@ export class EventEditComponent implements OnInit {
 
   ngOnInit(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.event = this.eventsService.getById(id);
+    this.event = (id) ? this.eventsService.getById(id)
+      : new EventFull();
 
     this.eventForm = new FormGroup({
       'name': new FormControl(this.event.name),

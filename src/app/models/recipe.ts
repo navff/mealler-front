@@ -1,4 +1,4 @@
-import { RecipeIngredient } from './ingredient';
+import { RecipeIngredient } from './referenceIngredient';
 
 export class Recipe implements IRecipe {
   id: number;

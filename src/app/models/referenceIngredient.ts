@@ -1,6 +1,6 @@
 import { IdNameEntity } from './abstract/IdNameEntity';
 
-export class Ingredient implements IdNameEntity {
+export class ReferenceIngredient implements IdNameEntity {
   id: number;
   name: string;
   price?: number;

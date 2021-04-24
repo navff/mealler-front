@@ -1,6 +1,6 @@
 import { ShoppingList } from '../../models/shopping-list';
 import { IngredientsService } from '../ingredients/ingredients.service';
-import { Colors, Units } from '../../models/ingredient';
+import { Colors, Units } from '../../models/referenceIngredient';
 import { Injectable } from '@angular/core';
 
 @Injectable({ providedIn: 'root' })

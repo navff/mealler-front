@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Ingredient, Units } from '../../../models/ingredient';
+import { ReferenceIngredient, Units } from '../../../models/referenceIngredient';
 import { IngredientsService } from '../ingredients.service';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
@@ -11,7 +11,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./ingredient-edit.component.scss']
 })
 export class IngredientEditComponent implements OnInit {
-  ingredient: Ingredient;
+  ingredient: ReferenceIngredient;
   ingredientForm: FormGroup;
   units = Object.keys(Units);
 

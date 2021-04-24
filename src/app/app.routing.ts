@@ -48,6 +48,13 @@ export const routes: Routes = [
             }
           },
           {
+            path: 'edit',
+            component: EventEditComponent,
+            data: {
+              title: 'Create event'
+            }
+          },
+          {
             path: 'meal/:id',
             component: MealEditComponent,
             data: {

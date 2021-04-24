@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EnvironmentService } from '../../common-services/EnvironmentService';
+import { EnvironmentService } from '../../common/services/EnvironmentService';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserAccount } from '../../models/user-account';
 import { Location } from '@angular/common';

@@ -1,24 +1,35 @@
 import { Injectable } from '@angular/core';
 import { UserAccount } from '../../models/user-account';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { EnvironmentService } from '../../common/services/EnvironmentService';
 
 @Injectable({ providedIn: 'root' })
 
 export class LoginService {
-  constructor(private httpClient: HttpClient) {
+  private readonly apiUrl: string;
+
+  constructor(private httpClient: HttpClient,
+              private environment: EnvironmentService) {
+    this.apiUrl = environment.getValue('apiUrl') + '/user/';
   }
 
   getUserByToken(token: string): Promise<UserAccount> {
-    if (token === 'error_token') {
-      return Promise.reject('User is not exists');
-    }
-
-    const result: UserAccount = {
-      token: token,
-      name: 'Petya',
-      email: 'petya@petr-petru.com'
+    const url = `${this.apiUrl}me`;
+    const header = {
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
     };
-    return Promise.resolve(result);
+    return this.httpClient.get<UserAccount>(url, header)
+      .toPromise()
+      .then(user => {
+        if (user) {
+          return user;
+        }
+        return null;
+      }).catch(error => {
+        console.error(error);
+        return null;
+      });
   }
 
   sendEmailWithToken(email: string, url: string): Promise<any> {

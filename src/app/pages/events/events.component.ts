@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { EventShort } from '../../models/event';
 import { EventsService } from './events.service';
-import { EnvironmentService } from '../../common-services/EnvironmentService';
+import { EnvironmentService } from '../../common/services/EnvironmentService';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-events',
@@ -11,7 +12,8 @@ import { EnvironmentService } from '../../common-services/EnvironmentService';
 export class EventsComponent implements OnInit {
 
   constructor(private eventsService: EventsService,
-              private environmentService: EnvironmentService) {
+              private environmentService: EnvironmentService,
+              private router: Router) {
   }
 
   events: EventShort[] = this.eventsService.getEvents();
@@ -20,4 +22,7 @@ export class EventsComponent implements OnInit {
     this.environmentService.setTitle('titles.events-page');
   }
 
+  onAddEventClick() {
+    this.router.navigate(['/events/edit']);
+  }
 }

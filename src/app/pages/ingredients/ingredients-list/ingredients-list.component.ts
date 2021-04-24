@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { IngredientsService } from '../ingredients.service';
-import { Ingredient } from '../../../models/ingredient';
+import { ReferenceIngredient } from '../../../models/referenceIngredient';
+import { PageView } from '../../../common/PageView';
 
 @Component({
   selector: 'app-ingredients-list',
@@ -10,12 +11,22 @@ import { Ingredient } from '../../../models/ingredient';
 })
 export class IngredientsListComponent implements OnInit {
   error: any;
-  public data: Ingredient[];
+  public data: PageView<ReferenceIngredient>;
   public filterQuery = '';
+  public page = 1;
 
   constructor(private ingredientsService: IngredientsService,
               private router: Router) {
-    this.data = ingredientsService.getIngredients();
+    this.loadData();
+  }
+
+  loadData() {
+    this.ingredientsService.getIngredients(this.filterQuery, this.page).then(
+      (ingredientsPageResult: PageView<ReferenceIngredient>) => {
+        console.log('ingredients: ', ingredientsPageResult.items);
+        this.data = ingredientsPageResult;
+      }
+    );
   }
 
   ngOnInit(): void {
@@ -27,5 +38,14 @@ export class IngredientsListComponent implements OnInit {
 
   onItemClicked(id: number) {
     this.router.navigate(['/ingredients/edit', id]);
+  }
+
+  onPageChanged(page: number) {
+    this.page = page;
+    this.loadData();
+  }
+
+  onFilterChanged() {
+    this.loadData();
   }
 }

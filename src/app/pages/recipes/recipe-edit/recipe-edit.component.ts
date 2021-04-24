@@ -12,9 +12,10 @@ import {
   Validators
 } from '@angular/forms';
 import { RecipesService } from '../recipes.service';
-import { RecipeIngredient, Units } from '../../../models/ingredient';
+import { RecipeIngredient, ReferenceIngredient, Units } from '../../../models/referenceIngredient';
 import { IngredientsService } from '../../ingredients/ingredients.service';
 import { Location } from '@angular/common';
+import { PageView } from '../../../common/PageView';
 
 @Component({
   selector: 'app-recipe-edit',
@@ -50,8 +51,10 @@ export class RecipeEditComponent implements OnInit {
       'ingredients': this.createIngredientsFormControls()
     });
 
-    const ingredientsDict = this.ingredientsService.getIngredients();
-    this.ingredientsDropdownItems = this.convertIngredientsToDropdown(ingredientsDict);
+    this.ingredientsService.getIngredients()
+      .then((ingredients: PageView<ReferenceIngredient>) => {
+        this.ingredientsDropdownItems = this.convertIngredientsToDropdown(ingredients.items);
+      });
   }
 
   onSaveRecipe() {

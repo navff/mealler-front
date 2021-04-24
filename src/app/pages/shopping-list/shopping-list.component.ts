@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { EnvironmentService } from '../../common-services/EnvironmentService';
+import { EnvironmentService } from '../../common/services/EnvironmentService';
 import { ShoppingListService } from './shopping-list.service';
 import { ShoppingList } from '../../models/shopping-list';
-import { Colors, ShoppingListIngredient } from '../../models/ingredient';
+import { Colors, ShoppingListIngredient } from '../../models/referenceIngredient';
 
 @Component({
   selector: 'app-shopping-list',

@@ -1,5 +1,5 @@
 import { EventShort } from './event';
-import { ShoppingListIngredient } from './ingredient';
+import { ShoppingListIngredient } from './referenceIngredient';
 
 export class ShoppingList {
   events: EventShort[];
