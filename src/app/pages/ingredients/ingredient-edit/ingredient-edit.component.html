@@ -1,7 +1,7 @@
 <div class='fade-in'>
   <c-row>
     <c-col lg='10' sm='12' xl='8'>
-      <c-card>
+      <c-card *ngIf='ingredient'>
         <c-card-header>
           <c-icon name='cil-pencil' size='sm'></c-icon>&nbsp;
           {{'ingredients.ingredient' | translate}}: <strong>{{ingredient.name}}</strong>
