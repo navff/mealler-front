@@ -4,6 +4,9 @@ import { IngredientsService } from '../ingredients.service';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
+import { HttpErrorResponse } from '@angular/common/http';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-ingredient-edit',
@@ -17,7 +20,9 @@ export class IngredientEditComponent implements OnInit {
 
   constructor(private ingredientsService: IngredientsService,
               private route: ActivatedRoute,
-              private location: Location) {
+              private location: Location,
+              private toastr: ToastrService,
+              private translateService: TranslateService) {
     const id = +this.route.snapshot.paramMap.get('id');
     this.ingredientsService.getById(id).then(ingredient => {
       this.ingredient = ingredient;
@@ -43,7 +48,17 @@ export class IngredientEditComponent implements OnInit {
 
   onSaveIngredient() {
     this.ingredientForm.get('price').setValue(this.getOneItemPrice());
-    console.log('INGREDIENT: ', this.ingredientForm.value);
+    const id = this.ingredient.id;
+    this.ingredient = this.ingredientForm.value;
+    this.ingredient.id = id;
+    this.ingredientsService.saveIngredient(this.ingredient)
+      .then(() => {
+        this.ingredientForm.reset(this.ingredient);
+        this.toastr.info(this.translateService.instant('common.saved'));
+      })
+      .catch((error: HttpErrorResponse) => {
+        this.toastr.error(error.message);
+      });
   }
 
   getOneItemPrice() {

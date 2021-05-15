@@ -47,7 +47,7 @@ import { MyAccountComponent } from './pages/my-account/my-account.component';
 import { MyTeamComponent } from './pages/my-team/my-team.component';
 import { IngredientsComponent } from './pages/ingredients/ingredients.component';
 import { MissingTranslationHandler, TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { MissingTranslationService } from './common/services/MissingTranslationService';
 import { MealListItemComponent } from './pages/events/meal-list-item/meal-list-item.component';
@@ -65,6 +65,7 @@ import { IngredientEditComponent } from './pages/ingredients/ingredient-edit/ing
 import { LoginComponent } from './pages/login/login.component';
 import { EmailSentComponent } from './pages/login/email-sent/email-sent.component';
 import { PagingComponent } from './common/components/paging/paging.component';
+import { AuthInterceptorService } from './common/auth-interceptor.service';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -153,6 +154,11 @@ const APP_CONTAINERS = [
     {
       provide: LocationStrategy,
       useClass: HashLocationStrategy
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true
     },
     IconSetService
   ],

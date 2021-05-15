@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { IngredientsService } from '../ingredients.service';
 import { ReferenceIngredient } from '../../../models/referenceIngredient';
 import { PageView } from '../../../common/PageView';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-ingredients-list',
@@ -16,17 +17,21 @@ export class IngredientsListComponent implements OnInit {
   public page = 1;
 
   constructor(private ingredientsService: IngredientsService,
-              private router: Router) {
+              private router: Router,
+              private toastr: ToastrService) {
     this.loadData();
   }
 
   loadData() {
-    this.ingredientsService.getIngredients(this.filterQuery, this.page).then(
-      (ingredientsPageResult: PageView<ReferenceIngredient>) => {
-        console.log('ingredients: ', ingredientsPageResult.items);
-        this.data = ingredientsPageResult;
-      }
-    );
+    this.ingredientsService.getIngredients(this.filterQuery, this.page)
+      .then(
+        (ingredientsPageResult: PageView<ReferenceIngredient>) => {
+          console.log('ingredients: ', ingredientsPageResult.items);
+          this.data = ingredientsPageResult;
+        }
+      ).catch(error => {
+      this.toastr.error(error.message);
+    });
   }
 
   ngOnInit(): void {
