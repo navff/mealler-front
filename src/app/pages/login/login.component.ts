@@ -27,6 +27,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.token) {
+      localStorage.removeItem('my_acccount');
       this.loginService.getUserByToken(this.token)
         .then(userAccount => {
           if (userAccount) {
