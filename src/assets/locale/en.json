@@ -1,7 +1,8 @@
 {
   "account": {
     "email": "Email",
-    "name": "Email"
+    "name": "Email",
+    "logout": "Logout"
   },
   "common": {
     "add": "Add",

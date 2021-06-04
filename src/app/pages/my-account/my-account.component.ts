@@ -28,6 +28,12 @@ export class MyAccountComponent implements OnInit {
       })
       .catch(err => console.error(err));
 
+    this.account = JSON.parse(localStorage.getItem('my_acccount'));
+    if (!this.account) {
+      this.router.navigate(['/login']);
+      return;
+    }
+
     this.accountForm = new FormGroup({
       name: new FormControl(this.account.name, [Validators.required]),
       email: new FormControl(this.account.email, [Validators.required, Validators.email])
@@ -46,5 +52,10 @@ export class MyAccountComponent implements OnInit {
   onSave() {
     console.log(this.accountForm.value);
     this.accountForm.markAsPristine();
+  }
+
+  onLogout() {
+    localStorage.removeItem('my_acccount');
+    this.accountForm.reset();
   }
 }

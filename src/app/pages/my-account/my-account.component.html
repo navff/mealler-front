@@ -47,6 +47,13 @@
                       cButton
                       color='secondary'
               >{{ 'common.cancel' | translate}}</button>
+
+              <button (click)='onLogout()'
+                      cButton
+                      class='float-right'
+                      color='dark'
+              >{{ 'account.logout' | translate}}</button>
+
             </c-form-group>
           </form>
         </c-col>
