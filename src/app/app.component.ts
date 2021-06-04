@@ -3,7 +3,6 @@ import { NavigationEnd, Router } from '@angular/router';
 
 import { IconSetService } from '@coreui/icons-angular';
 import {
-  brandSet,
   cilApplicationsSettings,
   cilEnvelopeClosed,
   cilLibraryAdd,
@@ -12,9 +11,7 @@ import {
   cilSun,
   cilTrash,
   cilUser,
-  cilX,
-  flagSet,
-  freeSet
+  cilX
 } from '@coreui/icons';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from '../environments/environment';
@@ -32,7 +29,7 @@ export class AppComponent implements OnInit {
     // iconSet singleton
     iconSet.icons = {
       cilMoon, cilSun, cilApplicationsSettings, cilX,
-      freeSet, brandSet, flagSet, cilLibraryAdd, cilPencil,
+      cilLibraryAdd, cilPencil,
       cilTrash, cilUser, cilEnvelopeClosed
     };
     this.translateService.use(environment.defaultLocale);
