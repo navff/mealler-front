@@ -29,7 +29,7 @@
     "zip": "git archive -o coreui-pro-angular-admin-template-starter-v$npm_package_version.zip -9 HEAD",
     "link": "npm link @coreui/angular",
     "extract": "ngx-translate-extract --input ./src -o ./src/assets/locale/en.json ./src/assets/locale/ru.json --sort --format namespaced-json",
-    "heroku-postbuild": "ng build --prod"
+    "heroku-postbuild": "ng build --env stage"
   },
   "private": true,
   "dependencies": {
@@ -116,7 +116,7 @@
     "typescript": "^4.0.6"
   },
   "engines": {
-    "node": ">= 10.13",
+    "node": "14.15.5",
     "npm": ">= 6"
   }
 }
