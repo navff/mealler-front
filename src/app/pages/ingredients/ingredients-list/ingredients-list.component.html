@@ -3,7 +3,14 @@
     <c-card-body *ngIf='data'>
       <c-row class='mb-3'>
         <c-col md='6'>
-          <h1>{{'ingredients.ingredient' | translate}}</h1>
+          <h1>{{'ingredients.ingredients' | translate}}
+            <button
+              (click)='onAddIngredient()'
+              class='btn btn-outline-success btn-sm mb-1'>
+              <span class='cil-plus btn-icon'></span>
+            </button>
+          </h1>
+
         </c-col>
         <c-col md='6'>
           <div class='input-group'>

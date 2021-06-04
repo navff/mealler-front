@@ -100,6 +100,13 @@ export const routes: Routes = [
             data: {
               title: 'Edit ingredient'
             }
+          },
+          {
+            path: 'edit',
+            component: IngredientEditComponent,
+            data: {
+              title: 'Create ingredient'
+            }
           }
         ]
       },

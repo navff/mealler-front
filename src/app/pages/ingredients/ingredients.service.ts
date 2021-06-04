@@ -98,12 +98,11 @@ export class IngredientsService {
   }
 
   saveIngredient(ingredient: ReferenceIngredient) {
-    const url = `${this.apiUrl}${ingredient.id}`;
-    return this.httpClient.put(url, ingredient)
-      .toPromise()
-      .then((response) => {
-        console.log(response);
-      });
+    if (ingredient.id === 0) {
+      return this.createNew(ingredient);
+    } else {
+      return this.updateExisting(ingredient);
+    }
   }
 
   getById(id: number): Promise<ReferenceIngredient> {
@@ -115,6 +114,24 @@ export class IngredientsService {
       .catch(error => {
         console.error(error);
         return null;
+      });
+  }
+
+  private updateExisting(ingredient: ReferenceIngredient) {
+    const url = `${this.apiUrl}${ingredient.id}`;
+    return this.httpClient.put(url, ingredient)
+      .toPromise()
+      .then((response) => {
+        console.log(response);
+      });
+  }
+
+  private createNew(ingredient: ReferenceIngredient) {
+    const url = `${this.apiUrl}`;
+    return this.httpClient.post(url, ingredient)
+      .toPromise()
+      .then((response) => {
+        console.log(response);
       });
   }
 }

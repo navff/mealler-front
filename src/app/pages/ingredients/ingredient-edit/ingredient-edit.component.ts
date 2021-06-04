@@ -24,18 +24,12 @@ export class IngredientEditComponent implements OnInit {
               private toastr: ToastrService,
               private translateService: TranslateService) {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.ingredientsService.getById(id).then(ingredient => {
-      this.ingredient = ingredient;
-
-      this.ingredientForm = new FormGroup({
-        name: new FormControl(this.ingredient.name, [Validators.required]),
-        price: new FormControl(this.ingredient.price, [Validators.required]),
-        unit: new FormControl(this.ingredient.unit, [Validators.required]),
-        packPrice: new FormControl(this.ingredient.packPrice, [Validators.required, Validators.min(0.01)]),
-        packAmount: new FormControl(this.ingredient.packAmount, [Validators.required, Validators.min(0.01)])
-      });
-    });
-
+    if (id !== 0) {
+      this.getIngredientFromServer(id);
+    } else {
+      this.ingredient = ReferenceIngredient.CreateEmpty();
+      this.createForm();
+    }
   }
 
 
@@ -69,5 +63,22 @@ export class IngredientEditComponent implements OnInit {
 
   onUnitChange() {
     this.ingredient.unit = this.ingredientForm.value.unit;
+  }
+
+  private getIngredientFromServer(id: number) {
+    this.ingredientsService.getById(id).then(ingredient => {
+      this.ingredient = ingredient;
+      this.createForm();
+    });
+  }
+
+  private createForm() {
+    this.ingredientForm = new FormGroup({
+      name: new FormControl(this.ingredient.name, [Validators.required]),
+      price: new FormControl(this.ingredient.price, [Validators.required]),
+      unit: new FormControl(this.ingredient.unit, [Validators.required]),
+      packPrice: new FormControl(this.ingredient.packPrice, [Validators.required, Validators.min(0.01)]),
+      packAmount: new FormControl(this.ingredient.packAmount, [Validators.required, Validators.min(0.01)])
+    });
   }
 }

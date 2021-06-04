@@ -54,4 +54,8 @@ export class IngredientsListComponent implements OnInit {
     this.page = 1;
     this.loadData();
   }
+
+  onAddIngredient() {
+    this.router.navigate(['/ingredients/edit']);
+  }
 }

@@ -7,6 +7,17 @@ export class ReferenceIngredient implements IdNameEntity {
   unit: Units;
   packPrice: number;
   packAmount: number;
+
+  static CreateEmpty(): ReferenceIngredient {
+    return {
+      id: 0,
+      name: '',
+      packAmount: 1,
+      packPrice: 0,
+      price: 0,
+      unit: Units.kg
+    };
+  }
 }
 
 export class RecipeIngredient {
